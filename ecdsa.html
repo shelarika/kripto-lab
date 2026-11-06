@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECDSA - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🔐 KRIPTO LAB</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html" class="active">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+    <div class="container">
+
+      <div class="section-badge">
+        DIGITAL SIGNATURE
+      </div>
+
+      <h1>ECDSA</h1>
+
+      <p>
+        Elliptic Curve Digital Signature Algorithm untuk membuat
+        dan memverifikasi tanda tangan digital menggunakan
+        kriptografi kurva eliptik.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu ECDSA?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">╰┈➤</div>
+
+        <div>
+
+          <p>
+            ECDSA atau Elliptic Curve Digital Signature Algorithm
+            merupakan algoritma tanda tangan digital yang
+            menggunakan konsep elliptic curve cryptography.
+          </p>
+
+          <p>
+            ECDSA digunakan untuk membuat tanda tangan digital
+            dan memverifikasi apakah suatu pesan benar-benar
+            berasal dari pemilik kunci yang sesuai serta tidak
+            mengalami perubahan.
+          </p>
+
+          <p>
+            ECDSA tidak digunakan untuk mengenkripsi pesan.
+            Fokus utamanya adalah tanda tangan digital dan
+            proses verifikasi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">02 — PROSES</span>
+        <h2>Cara Kerja ECDSA</h2>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3>Generate Key</h3>
+          <p>
+            Sistem membuat pasangan private key dan public key.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3>Hash Pesan</h3>
+          <p>
+            Pesan diproses menggunakan fungsi hash sebelum
+            digunakan dalam proses tanda tangan.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">03</div>
+          <h3>Sign</h3>
+          <p>
+            Private key digunakan untuk menghasilkan
+            tanda tangan digital.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">04</div>
+          <h3>Verify</h3>
+          <p>
+            Public key digunakan untuk memeriksa apakah
+            tanda tangan tersebut valid.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- KEY INFORMATION -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">03 — KONSEP</span>
+        <h2>Kunci ECDSA</h2>
+      </div>
+
+      <div class="algorithm-grid">
+
+        <div class="algorithm-page-card">
+          <div class="card-icon">🔒</div>
+          <h3>Private Key</h3>
+          <p>
+            Kunci rahasia yang digunakan untuk membuat
+            tanda tangan digital.
+          </p>
+        </div>
+
+        <div class="algorithm-page-card">
+          <div class="card-icon">🔓</div>
+          <h3>Public Key</h3>
+          <p>
+            Kunci yang dapat digunakan untuk memverifikasi
+            tanda tangan digital.
+          </p>
+        </div>
+
+        <div class="algorithm-page-card">
+          <div class="card-icon">📝</div>
+          <h3>Signature</h3>
+          <p>
+            Data tanda tangan yang dihasilkan dari pesan
+            dan private key.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba ECDSA</h2>
+
+        <p>
+          Generate pasangan kunci, buat tanda tangan digital,
+          lalu lakukan verifikasi terhadap pesan.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="ecdsa-text">
+            Pesan
+          </label>
+
+          <textarea
+            id="ecdsa-text"
+            rows="5"
+            placeholder="Masukkan pesan..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="ecdsa-generate"
+            class="btn btn-primary"
+          >
+            🔑 Generate Key
+          </button>
+
+          <button
+            id="ecdsa-sign"
+            class="btn btn-primary"
+          >
+            ✍️ Sign
+          </button>
+
+          <button
+            id="ecdsa-verify"
+            class="btn btn-secondary"
+          >
+            ✓ Verify
+          </button>
+
+          <button
+            id="ecdsa-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="ecdsa-public">
+            Public Key
+          </label>
+
+          <textarea
+            id="ecdsa-public"
+            rows="4"
+            readonly
+            placeholder="Public key akan muncul di sini..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="ecdsa-private">
+            Private Key
+          </label>
+
+          <textarea
+            id="ecdsa-private"
+            rows="4"
+            readonly
+            placeholder="Private key akan muncul di sini..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="ecdsa-signature">
+            Digital Signature
+          </label>
+
+          <textarea
+            id="ecdsa-signature"
+            rows="4"
+            readonly
+            placeholder="Signature akan muncul di sini..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Status Verifikasi
+          </label>
+
+          <div
+            id="ecdsa-output"
+            class="output-box"
+          >
+            Hasil verifikasi akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Private key harus dijaga kerahasiaannya.
+          Public key dapat dibagikan untuk kebutuhan verifikasi.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="fungsi.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Fungsi Kriptografi
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>🔐 KRIPTO LAB</strong>
+        <p>Belajar kriptografi secara interaktif.</p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    let ecdsaPrivateKey = null;
+    let ecdsaPublicKey = null;
+    let ecdsaSignature = null;
+
+
+    const ecdsaText =
+      document.getElementById('ecdsa-text');
+
+    const ecdsaPublic =
+      document.getElementById('ecdsa-public');
+
+    const ecdsaPrivate =
+      document.getElementById('ecdsa-private');
+
+    const ecdsaSignatureBox =
+      document.getElementById('ecdsa-signature');
+
+    const ecdsaOutput =
+      document.getElementById('ecdsa-output');
+
+
+    function bufferToBase64(buffer) {
+
+      const bytes = new Uint8Array(buffer);
+
+      let binary = '';
+
+      bytes.forEach(byte => {
+        binary += String.fromCharCode(byte);
+      });
+
+      return btoa(binary);
+
+    }
+
+
+    function base64ToBuffer(base64) {
+
+      const binary = atob(base64);
+
+      const bytes =
+        new Uint8Array(binary.length);
+
+      for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+
+      return bytes;
+
+    }
+
+
+    // Generate Key
+    document
+      .getElementById('ecdsa-generate')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            const keyPair =
+              await crypto.subtle.generateKey(
+                {
+                  name: 'ECDSA',
+                  namedCurve: 'P-256'
+                },
+                true,
+                ['sign', 'verify']
+              );
+
+
+            ecdsaPrivateKey =
+              keyPair.privateKey;
+
+            ecdsaPublicKey =
+              keyPair.publicKey;
+
+
+            const publicJwk =
+              await crypto.subtle.exportKey(
+                'jwk',
+                ecdsaPublicKey
+              );
+
+
+            const privateJwk =
+              await crypto.subtle.exportKey(
+                'jwk',
+                ecdsaPrivateKey
+              );
+
+
+            ecdsaPublic.value =
+              JSON.stringify(
+                publicJwk,
+                null,
+                2
+              );
+
+
+            ecdsaPrivate.value =
+              JSON.stringify(
+                privateJwk,
+                null,
+                2
+              );
+
+
+            ecdsaOutput.textContent =
+              'Pasangan kunci berhasil dibuat.';
+
+
+          } catch (error) {
+
+            ecdsaOutput.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // Sign
+    document
+      .getElementById('ecdsa-sign')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            if (!ecdsaPrivateKey) {
+
+              ecdsaOutput.textContent =
+                'Generate key terlebih dahulu.';
+
+              return;
+
+            }
+
+
+            const message =
+              ecdsaText.value;
+
+            if (!message) {
+
+              ecdsaOutput.textContent =
+                'Pesan harus diisi.';
+
+              return;
+
+            }
+
+
+            const data =
+              new TextEncoder().encode(message);
+
+
+            ecdsaSignature =
+              await crypto.subtle.sign(
+                {
+                  name: 'ECDSA',
+                  hash: 'SHA-256'
+                },
+                ecdsaPrivateKey,
+                data
+              );
+
+
+            ecdsaSignatureBox.value =
+              bufferToBase64(
+                ecdsaSignature
+              );
+
+
+            ecdsaOutput.textContent =
+              'Tanda tangan digital berhasil dibuat.';
+
+
+          } catch (error) {
+
+            ecdsaOutput.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // Verify
+    document
+      .getElementById('ecdsa-verify')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            if (!ecdsaPublicKey) {
+
+              ecdsaOutput.textContent =
+                'Generate key terlebih dahulu.';
+
+              return;
+
+            }
+
+
+            if (!ecdsaSignature) {
+
+              ecdsaOutput.textContent =
+                'Buat signature terlebih dahulu.';
+
+              return;
+
+            }
+
+
+            const message =
+              ecdsaText.value;
+
+            if (!message) {
+
+              ecdsaOutput.textContent =
+                'Pesan harus diisi.';
+
+              return;
+
+            }
+
+
+            const data =
+              new TextEncoder().encode(message);
+
+
+            const valid =
+              await crypto.subtle.verify(
+                {
+                  name: 'ECDSA',
+                  hash: 'SHA-256'
+                },
+                ecdsaPublicKey,
+                ecdsaSignature,
+                data
+              );
+
+
+            if (valid) {
+
+              ecdsaOutput.textContent =
+                '✓ Signature VALID. Pesan tidak berubah.';
+
+            } else {
+
+              ecdsaOutput.textContent =
+                '✗ Signature TIDAK VALID.';
+
+            }
+
+
+          } catch (error) {
+
+            ecdsaOutput.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // Clear
+    document
+      .getElementById('ecdsa-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          ecdsaText.value = '';
+          ecdsaPublic.value = '';
+          ecdsaPrivate.value = '';
+          ecdsaSignatureBox.value = '';
+
+          ecdsaOutput.textContent =
+            'Hasil verifikasi akan muncul di sini...';
+
+          ecdsaPrivateKey = null;
+          ecdsaPublicKey = null;
+          ecdsaSignature = null;
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

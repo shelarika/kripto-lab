@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RC4 | Kripto Lab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 Kripto<span>Lab</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html" class="active">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <span class="section-badge">
+      🗲 Stream Cipher
+      </span>
+
+      <h1>
+        RC4
+      </h1>
+
+      <p>
+        Rivest Cipher 4 adalah algoritma stream cipher yang
+        menghasilkan keystream untuk melakukan proses
+        enkripsi dan dekripsi data.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PENJELASAN -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          𖡡
+        </div>
+
+        <div>
+
+          <h2>
+            Apa itu RC4?
+          </h2>
+
+          <p>
+            RC4 merupakan algoritma stream cipher yang bekerja
+            dengan menghasilkan rangkaian byte pseudo-random
+            yang disebut keystream.
+          </p>
+
+          <p>
+            Keystream tersebut kemudian digunakan bersama
+            operasi XOR untuk menghasilkan ciphertext.
+            Proses dekripsi menggunakan keystream yang sama
+            untuk mendapatkan kembali plaintext.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CARA KERJA -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Cara Kerja
+        </span>
+
+        <h2>
+          Proses RC4
+        </h2>
+
+        <p>
+          Secara umum RC4 memiliki dua proses utama.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <span class="process-number">
+            01
+          </span>
+
+          <h3>
+            KSA
+          </h3>
+
+          <p>
+            Key Scheduling Algorithm digunakan untuk
+            menginisialisasi dan mengacak state array
+            berdasarkan kunci yang diberikan.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            02
+          </span>
+
+          <h3>
+            PRGA
+          </h3>
+
+          <p>
+            Pseudo-Random Generation Algorithm menghasilkan
+            keystream yang nantinya digunakan dalam proses XOR.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            03
+          </span>
+
+          <h3>
+            XOR
+          </h3>
+
+          <p>
+            Plaintext digabungkan dengan keystream menggunakan
+            operasi XOR untuk menghasilkan ciphertext.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RUMUS -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ∑
+        </div>
+
+        <div>
+
+          <h2>
+            Prinsip Dasar
+          </h2>
+
+          <p>
+            Prinsip dasar enkripsi RC4 dapat dituliskan sebagai:
+          </p>
+
+          <div class="formula-box">
+            Ciphertext = Plaintext XOR Keystream
+          </div>
+
+          <p>
+            Karena operasi XOR bersifat reversibel, proses
+            dekripsi dapat menggunakan keystream yang sama.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULASI -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Simulasi
+        </span>
+
+        <h2>
+          Coba RC4
+        </h2>
+
+        <p>
+          Masukkan plaintext dan kunci untuk menjalankan
+          simulasi RC4.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="rc4-text">
+            Teks
+          </label>
+
+          <textarea
+            id="rc4-text"
+            placeholder="Masukkan teks..."
+            rows="5"
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="rc4-key">
+            Kunci
+          </label>
+
+          <input
+            type="text"
+            id="rc4-key"
+            placeholder="Masukkan kunci..."
+          >
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            type="button"
+            id="rc4-encrypt"
+            class="btn btn-primary"
+          >
+            🔒 Enkripsi
+          </button>
+
+          <button
+            type="button"
+            id="rc4-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="rc4-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATATAN -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div>
+
+          <h2>
+            Catatan
+          </h2>
+
+          <p>
+            RC4 menggunakan kunci yang sama untuk proses
+            enkripsi dan dekripsi. Pastikan kunci yang digunakan
+            saat dekripsi sama dengan kunci saat enkripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a href="stream.html" class="btn btn-secondary">
+         Kembali ke Stream Cipher
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+
+          <h3>
+            🔐 KriptoLab
+          </h3>
+
+          <p>
+            Media pembelajaran dan simulasi
+            algoritma kriptografi.
+          </p>
+
+        </div>
+
+        <div>
+
+          <p>
+            © 2026 KriptoLab
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+<script src="js/util.js"></script>
+<script src="js/stream.js"></script>
+
+<script>
+
+  const rc4TextInput =
+    document.getElementById('rc4-text');
+
+  const rc4KeyInput =
+    document.getElementById('rc4-key');
+
+  const rc4OutputBox =
+    document.getElementById('rc4-output');
+
+
+  // =========================
+  // ENKRIPSI RC4
+  // =========================
+
+  document
+    .getElementById('rc4-encrypt')
+    .addEventListener('click', () => {
+
+      try {
+
+        const text =
+          rc4TextInput.value;
+
+        const key =
+          rc4KeyInput.value;
+
+
+        if (!text || !key) {
+
+          rc4OutputBox.textContent =
+            'Teks dan kunci harus diisi.';
+
+          return;
+        }
+
+
+        // Ubah plaintext menjadi byte
+        const data =
+          enc.encode(text);
+
+
+        // Jalankan RC4
+        const result =
+          rc4(key, data);
+
+
+        // Tampilkan dalam bentuk HEX
+        rc4OutputBox.textContent =
+          hex(result);
+
+
+      } catch (error) {
+
+        rc4OutputBox.textContent =
+          'Error: ' + error.message;
+
+      }
+
+    });
+
+
+  // =========================
+  // DEKRIPSI RC4
+  // =========================
+
+  document
+    .getElementById('rc4-decrypt')
+    .addEventListener('click', () => {
+
+      try {
+
+        const text =
+          rc4TextInput.value;
+
+        const key =
+          rc4KeyInput.value;
+
+
+        if (!text || !key) {
+
+          rc4OutputBox.textContent =
+            'Ciphertext dan kunci harus diisi.';
+
+          return;
+        }
+
+
+        // Ciphertext harus berupa HEX
+        const data =
+          unhex(text);
+
+
+        // Jalankan RC4 dengan key yang sama
+        const result =
+          rc4(key, data);
+
+
+        // Ubah kembali menjadi teks
+        rc4OutputBox.textContent =
+          dec.decode(
+            new Uint8Array(result)
+          );
+
+
+      } catch (error) {
+
+        rc4OutputBox.textContent =
+          'Error: ' + error.message;
+
+      }
+
+    });
+
+</script>
+</body>
+</html>

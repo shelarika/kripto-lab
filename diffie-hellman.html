@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diffie-Hellman - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🔐 KRIPTO LAB</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+    <div class="container">
+
+      <div class="section-badge">
+        KEY EXCHANGE
+      </div>
+
+      <h1>Diffie-Hellman</h1>
+
+      <p>
+        Metode pertukaran kunci yang memungkinkan dua pihak
+        membentuk secret key melalui komunikasi publik.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu Diffie-Hellman?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">⌯⌲</div>
+
+        <div>
+          <p>
+            Diffie-Hellman merupakan metode untuk melakukan
+            <strong>pertukaran kunci rahasia</strong> antara dua pihak
+            melalui saluran komunikasi yang tidak aman.
+          </p>
+
+          <p>
+            Kedua pihak dapat menyepakati sebuah
+            <strong>shared secret</strong> tanpa mengirimkan
+            secret key tersebut secara langsung.
+          </p>
+
+          <p>
+            Keamanan metode ini berkaitan dengan sulitnya
+            menyelesaikan masalah logaritma diskrit pada
+            parameter yang besar.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">02 — PROSES</span>
+        <h2>Cara Kerja Diffie-Hellman</h2>
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3>Parameter Publik</h3>
+          <p>
+            Alice dan Bob menyepakati nilai publik
+            berupa bilangan prima p dan generator g.
+          </p>
+        </div>
+
+
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3>Secret Key</h3>
+          <p>
+            Alice memilih secret a dan Bob memilih
+            secret b yang tidak dibagikan.
+          </p>
+        </div>
+
+
+        <div class="process-card">
+          <div class="process-number">03</div>
+          <h3>Pertukaran Public Value</h3>
+          <p>
+            Masing-masing menghitung dan bertukar
+            nilai publik A dan B.
+          </p>
+        </div>
+
+
+        <div class="process-card">
+          <div class="process-number">04</div>
+          <h3>Shared Secret</h3>
+          <p>
+            Alice dan Bob menghitung shared secret
+            yang menghasilkan nilai yang sama.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">03 — RUMUS</span>
+        <h2>Rumus Dasar</h2>
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Public parameter:</strong>
+          p dan g
+        </p>
+
+        <p>
+          <strong>Alice:</strong>
+          A = g<sup>a</sup> mod p
+        </p>
+
+        <p>
+          <strong>Bob:</strong>
+          B = g<sup>b</sup> mod p
+        </p>
+
+        <p>
+          <strong>Shared Secret Alice:</strong>
+          S = B<sup>a</sup> mod p
+        </p>
+
+        <p>
+          <strong>Shared Secret Bob:</strong>
+          S = A<sup>b</sup> mod p
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">04 — SIMULASI</span>
+        <h2>Coba Diffie-Hellman</h2>
+
+        <p>
+          Masukkan parameter publik dan secret masing-masing pihak,
+          kemudian lihat bagaimana keduanya menghasilkan shared secret
+          yang sama.
+        </p>
+      </div>
+
+
+      <div class="simulation-card">
+
+        <!-- PUBLIC PARAMETERS -->
+        <h3>Parameter Publik</h3>
+
+        <div class="input-grid">
+
+          <div class="input-group">
+            <label for="dh-p">Bilangan Prima (p)</label>
+
+            <input
+              type="number"
+              id="dh-p"
+              value="23"
+              min="3"
+            >
+          </div>
+
+
+          <div class="input-group">
+            <label for="dh-g">Generator (g)</label>
+
+            <input
+              type="number"
+              id="dh-g"
+              value="5"
+              min="2"
+            >
+          </div>
+
+        </div>
+
+
+        <!-- SECRET VALUES -->
+        <h3 class="simulation-subtitle">
+          Secret Masing-Masing
+        </h3>
+
+
+        <div class="input-grid">
+
+          <div class="input-group">
+
+            <label for="dh-a">
+              Secret Alice (a)
+            </label>
+
+            <input
+              type="number"
+              id="dh-a"
+              value="6"
+              min="1"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="dh-b">
+              Secret Bob (b)
+            </label>
+
+            <input
+              type="number"
+              id="dh-b"
+              value="15"
+              min="1"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <div class="simulation-buttons">
+
+          <button
+            id="dh-calculate"
+            class="btn btn-primary"
+          >
+            🔄 Hitung Shared Secret
+          </button>
+
+          <button
+            id="dh-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <div class="key-grid">
+
+          <div class="input-group">
+
+            <label for="dh-public-a">
+              Public Value Alice (A)
+            </label>
+
+            <input
+              id="dh-public-a"
+              readonly
+              placeholder="Akan muncul di sini..."
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="dh-public-b">
+              Public Value Bob (B)
+            </label>
+
+            <input
+              id="dh-public-b"
+              readonly
+              placeholder="Akan muncul di sini..."
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="key-grid">
+
+          <div class="input-group">
+
+            <label for="dh-secret-a">
+              Shared Secret Alice
+            </label>
+
+            <input
+              id="dh-secret-a"
+              readonly
+              placeholder="Akan muncul di sini..."
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="dh-secret-b">
+              Shared Secret Bob
+            </label>
+
+            <input
+              id="dh-secret-b"
+              readonly
+              placeholder="Akan muncul di sini..."
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>Hasil</label>
+
+          <div
+            id="dh-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- NOTE -->
+      <div class="info-box">
+
+
+        <p>
+          Angka pada simulasi dibuat kecil agar proses
+          perhitungan mudah dipahami. Implementasi nyata
+          menggunakan parameter yang jauh lebih besar.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+         Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const pInput =
+      document.getElementById('dh-p');
+
+    const gInput =
+      document.getElementById('dh-g');
+
+    const aInput =
+      document.getElementById('dh-a');
+
+    const bInput =
+      document.getElementById('dh-b');
+
+    const publicA =
+      document.getElementById('dh-public-a');
+
+    const publicB =
+      document.getElementById('dh-public-b');
+
+    const secretA =
+      document.getElementById('dh-secret-a');
+
+    const secretB =
+      document.getElementById('dh-secret-b');
+
+    const output =
+      document.getElementById('dh-output');
+
+
+    // Modular exponentiation
+    function modPow(base, exponent, modulus) {
+
+      if (modulus <= 0) {
+        throw new Error('Modulus harus lebih besar dari 0.');
+      }
+
+      let result = 1n;
+
+      let b =
+        BigInt(base) %
+        BigInt(modulus);
+
+      let e =
+        BigInt(exponent);
+
+      const m =
+        BigInt(modulus);
+
+
+      while (e > 0n) {
+
+        if (e % 2n === 1n) {
+          result =
+            (result * b) % m;
+        }
+
+        b =
+          (b * b) % m;
+
+        e =
+          e / 2n;
+      }
+
+      return result;
+    }
+
+
+    // CHECK PRIME
+    function isPrime(number) {
+
+      if (number < 2) {
+        return false;
+      }
+
+      for (
+        let i = 2;
+        i * i <= number;
+        i++
+      ) {
+
+        if (number % i === 0) {
+          return false;
+        }
+
+      }
+
+      return true;
+    }
+
+
+    // CALCULATE
+    document
+      .getElementById('dh-calculate')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const p =
+              Number(pInput.value);
+
+            const g =
+              Number(gInput.value);
+
+            const a =
+              Number(aInput.value);
+
+            const b =
+              Number(bInput.value);
+
+
+            // Validation
+
+            if (!Number.isInteger(p) ||
+                !Number.isInteger(g) ||
+                !Number.isInteger(a) ||
+                !Number.isInteger(b)) {
+
+              throw new Error(
+                'Semua nilai harus berupa bilangan bulat.'
+              );
+
+            }
+
+
+            if (!isPrime(p)) {
+
+              throw new Error(
+                'Nilai p harus berupa bilangan prima.'
+              );
+
+            }
+
+
+            if (g <= 1 || g >= p) {
+
+              throw new Error(
+                'Nilai g harus lebih besar dari 1 dan lebih kecil dari p.'
+              );
+
+            }
+
+
+            if (a <= 0 || b <= 0) {
+
+              throw new Error(
+                'Secret Alice dan Bob harus lebih besar dari 0.'
+              );
+
+            }
+
+
+            // Public values
+
+            const A =
+              modPow(g, a, p);
+
+            const B =
+              modPow(g, b, p);
+
+
+            // Shared secrets
+
+            const SA =
+              modPow(B, a, p);
+
+            const SB =
+              modPow(A, b, p);
+
+
+            publicA.value =
+              A.toString();
+
+            publicB.value =
+              B.toString();
+
+            secretA.value =
+              SA.toString();
+
+            secretB.value =
+              SB.toString();
+
+
+            if (SA === SB) {
+
+              output.textContent =
+                'Berhasil! Alice dan Bob menghasilkan Shared Secret yang sama: ' +
+                SA.toString();
+
+            } else {
+
+              output.textContent =
+                'Shared Secret tidak sama. Periksa parameter yang digunakan.';
+
+            }
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+    document
+      .getElementById('dh-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          pInput.value = '23';
+          gInput.value = '5';
+          aInput.value = '6';
+          bInput.value = '15';
+
+          publicA.value = '';
+          publicB.value = '';
+          secretA.value = '';
+          secretB.value = '';
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rail Fence Cipher - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        TRANSPOSITION CIPHER
+      </div>
+
+      <h1>Rail Fence Cipher</h1>
+
+      <p>
+        Algoritma transposisi yang menyusun karakter pesan
+        dalam pola zig-zag pada beberapa baris atau rail.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu Rail Fence Cipher?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div>
+
+          <p>
+            Rail Fence Cipher merupakan algoritma kriptografi
+            klasik yang menggunakan teknik transposisi.
+          </p>
+
+          <p>
+            Berbeda dengan cipher substitusi, karakter pada
+            plaintext tidak diganti. Posisi karakter diubah
+            dengan menyusunnya dalam pola zig-zag.
+          </p>
+
+          <p>
+            Jumlah rail menentukan pola zig-zag yang digunakan
+            dalam proses enkripsi dan dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja Rail Fence</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Masukkan Pesan</h3>
+
+          <p>
+            Pesan plaintext dimasukkan sebagai
+            input algoritma.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Pola Zig-Zag</h3>
+
+          <p>
+            Karakter disusun dari rail atas menuju
+            rail bawah secara zig-zag.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Baca Per Rail</h3>
+
+          <p>
+            Karakter dibaca dari setiap rail secara
+            berurutan untuk menghasilkan ciphertext.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Rekonstruksi</h3>
+
+          <p>
+            Pada dekripsi, ciphertext disusun kembali
+            mengikuti pola zig-zag untuk mendapatkan
+            plaintext.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONCEPT -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — KONSEP
+        </span>
+
+        <h2>Pola Rail Fence</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          Contoh dengan <strong>3 rail</strong>:
+        </p>
+
+        <p>
+          P &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N
+        </p>
+
+        <p>
+          &nbsp;&nbsp; L &nbsp;&nbsp; A &nbsp;&nbsp; E &nbsp;&nbsp; R
+        </p>
+
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp; I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S
+        </p>
+
+        <p>
+          Karakter kemudian dibaca dari rail pertama,
+          rail kedua, dan rail ketiga.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba Rail Fence Cipher</h2>
+
+        <p>
+          Masukkan teks dan jumlah rail untuk mencoba
+          proses enkripsi atau dekripsi.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="rail-text">
+            Teks
+          </label>
+
+          <textarea
+            id="rail-text"
+            rows="5"
+            placeholder="Masukkan teks..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="rail-count">
+            Jumlah Rail
+          </label>
+
+          <input
+            type="number"
+            id="rail-count"
+            value="3"
+            min="2"
+            max="20"
+            placeholder="Contoh: 3"
+          >
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="rail-encrypt"
+            class="btn btn-primary"
+          >
+            🔐 Enkripsi
+          </button>
+
+          <button
+            id="rail-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+          <button
+            id="rail-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="rail-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Jumlah rail harus minimal 2. Spasi dan simbol
+          tetap dianggap sebagai bagian dari teks sehingga
+          posisinya ikut ditransposisikan.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const textInput =
+      document.getElementById('rail-text');
+
+    const railInput =
+      document.getElementById('rail-count');
+
+    const output =
+      document.getElementById('rail-output');
+
+
+    // ENKRIPSI
+    function railEncrypt(text, rails) {
+
+      if (rails <= 1 || rails >= text.length) {
+        return text;
+      }
+
+      const rows =
+        Array.from(
+          { length: rails },
+          () => []
+        );
+
+      let row = 0;
+      let direction = 1;
+
+
+      for (const char of text) {
+
+        rows[row].push(char);
+
+        if (row === 0) {
+          direction = 1;
+        }
+
+        else if (row === rails - 1) {
+          direction = -1;
+        }
+
+        row += direction;
+
+      }
+
+
+      return rows
+        .map(line => line.join(''))
+        .join('');
+
+    }
+
+
+    // DEKRIPSI
+    function railDecrypt(ciphertext, rails) {
+
+      if (
+        rails <= 1 ||
+        rails >= ciphertext.length
+      ) {
+        return ciphertext;
+      }
+
+
+      const pattern = [];
+
+      let row = 0;
+      let direction = 1;
+
+
+      for (let i = 0; i < ciphertext.length; i++) {
+
+        pattern.push(row);
+
+        if (row === 0) {
+          direction = 1;
+        }
+
+        else if (row === rails - 1) {
+          direction = -1;
+        }
+
+        row += direction;
+
+      }
+
+
+      const counts =
+        Array(rails).fill(0);
+
+
+      for (const r of pattern) {
+        counts[r]++;
+      }
+
+
+      const rows =
+        Array.from(
+          { length: rails },
+          () => []
+        );
+
+
+      let position = 0;
+
+
+      for (let r = 0; r < rails; r++) {
+
+        rows[r] =
+          ciphertext
+            .slice(
+              position,
+              position + counts[r]
+            )
+            .split('');
+
+        position += counts[r];
+
+      }
+
+
+      const indexes =
+        Array(rails).fill(0);
+
+      let result = '';
+
+
+      for (const r of pattern) {
+
+        result +=
+          rows[r][indexes[r]];
+
+        indexes[r]++;
+
+      }
+
+
+      return result;
+
+    }
+
+
+    // ENKRIPSI BUTTON
+    document
+      .getElementById('rail-encrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          const text =
+            textInput.value;
+
+          const rails =
+            Number(railInput.value);
+
+
+          if (!text) {
+
+            output.textContent =
+              'Teks harus diisi.';
+
+            return;
+
+          }
+
+
+          if (
+            !Number.isInteger(rails) ||
+            rails < 2
+          ) {
+
+            output.textContent =
+              'Jumlah rail minimal 2.';
+
+            return;
+
+          }
+
+
+          output.textContent =
+            railEncrypt(
+              text,
+              rails
+            );
+
+        }
+      );
+
+
+    // DEKRIPSI BUTTON
+    document
+      .getElementById('rail-decrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          const text =
+            textInput.value;
+
+          const rails =
+            Number(railInput.value);
+
+
+          if (!text) {
+
+            output.textContent =
+              'Ciphertext harus diisi.';
+
+            return;
+
+          }
+
+
+          if (
+            !Number.isInteger(rails) ||
+            rails < 2
+          ) {
+
+            output.textContent =
+              'Jumlah rail minimal 2.';
+
+            return;
+
+          }
+
+
+          output.textContent =
+            railDecrypt(
+              text,
+              rails
+            );
+
+        }
+      );
+
+
+    // CLEAR
+    document
+      .getElementById('rail-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          textInput.value = '';
+          railInput.value = 3;
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Feistel Network — Kripto Lab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔐</span>
+        <span>Kripto<span class="logo-accent">Lab</span></span>
+      </a>
+
+      <nav class="nav-menu">
+
+        <a href="index.html">Home</a>
+
+        <a href="block.html" class="active">
+          Block Cipher
+        </a>
+
+        <a href="stream.html">
+          Stream Cipher
+        </a>
+
+        <a href="fungsi.html">
+          Fungsi Kriptografi
+        </a>
+
+        <a href="matematika.html">
+          Matematika
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="algorithm-page">
+
+
+    <!-- HEADER -->
+
+    <section class="algorithm-hero">
+
+      <div class="algorithm-hero-icon">
+        ◈
+      </div>
+
+      <span class="eyebrow">
+        BLOCK CIPHER · LEARNING
+      </span>
+
+      <h1>
+        Feistel Network
+      </h1>
+
+      <p>
+        Model struktur Block Cipher yang digunakan untuk memahami
+        bagaimana proses enkripsi dan dekripsi dilakukan melalui
+        beberapa ronde.
+      </p>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="algorithm-content">
+
+      <div class="content-heading">
+
+        <span class="eyebrow">
+          01 · OVERVIEW
+        </span>
+
+        <h2>
+          Mengenal Feistel Network
+        </h2>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <p>
+          Feistel Network merupakan sebuah struktur yang membagi
+          blok data menjadi dua bagian, yaitu bagian kiri (L)
+          dan bagian kanan (R).
+        </p>
+
+        <p>
+          Pada setiap ronde, salah satu bagian diproses menggunakan
+          fungsi tertentu bersama kunci ronde, kemudian hasilnya
+          digunakan untuk memengaruhi bagian lainnya.
+        </p>
+
+        <p>
+          Struktur ini membantu memahami bagaimana sebuah sistem
+          Block Cipher dapat melakukan proses enkripsi dan dekripsi.
+        </p>
+
+      </div>
+
+
+      <!-- ================= PROCESS ================= -->
+
+      <div class="content-heading process-heading">
+
+        <span class="eyebrow">
+          02 · HOW IT WORKS
+        </span>
+
+        <h2>
+          Alur Proses
+        </h2>
+
+      </div>
+
+
+      <div class="feistel-flow">
+
+        <div class="flow-box">
+          <span>INPUT</span>
+          <strong>Plaintext</strong>
+          <small>Data asli</small>
+        </div>
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+        <div class="flow-box">
+          <span>ROUND</span>
+          <strong>L & R</strong>
+          <small>Pembagian blok</small>
+        </div>
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+        <div class="flow-box">
+          <span>PROCESS</span>
+          <strong>F(L/R, K)</strong>
+          <small>Fungsi + kunci</small>
+        </div>
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+        <div class="flow-box">
+          <span>OUTPUT</span>
+          <strong>Ciphertext</strong>
+          <small>Data terenkripsi</small>
+        </div>
+
+      </div>
+
+
+      <!-- ================= FORMULA ================= -->
+
+      <div class="formula-card">
+
+        <div>
+          <span class="eyebrow">
+            BASIC FORMULA
+          </span>
+
+          <h3>
+            Proses setiap ronde
+          </h3>
+        </div>
+
+        <div class="formula">
+
+          <div>
+            <span>R</span>
+            <strong>L<sub>baru</sub> = R<sub>lama</sub></strong>
+          </div>
+
+          <div>
+            <span>L</span>
+            <strong>
+              R<sub>baru</sub> =
+              L<sub>lama</sub> ⊕ F(R<sub>lama</sub>, K)
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= SIMULATION ================= -->
+
+      <section class="simulation-section">
+
+        <div class="content-heading">
+
+          <span class="eyebrow">
+            03 · INTERACTIVE SIMULATION
+          </span>
+
+          <h2>
+            Coba Feistel Network
+          </h2>
+
+          <p>
+            Masukkan pesan dan kunci, kemudian jalankan proses
+            enkripsi atau dekripsi.
+          </p>
+
+        </div>
+
+
+        <div class="simulation-card">
+
+          <div class="input-group">
+
+            <label for="feistel-text">
+              Pesan
+            </label>
+
+            <textarea
+              id="feistel-text"
+              rows="5"
+              placeholder="Masukkan pesan..."
+            >Halo UTS Kriptografi 2026</textarea>
+
+            <small>
+              Masukkan teks yang ingin diproses.
+            </small>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="feistel-key">
+              Kunci / Passphrase
+            </label>
+
+            <input
+              id="feistel-key"
+              type="text"
+              value="rahasia123"
+              placeholder="Masukkan kunci..."
+            >
+
+            <small>
+              Kunci yang digunakan dalam proses.
+            </small>
+
+          </div>
+
+
+          <div class="simulation-actions">
+
+            <button
+              id="feistel-encrypt"
+              class="sim-button primary"
+            >
+              🔒 Enkripsi
+            </button>
+
+            <button
+              id="feistel-decrypt"
+              class="sim-button secondary"
+            >
+              🔓 Dekripsi
+            </button>
+
+          </div>
+
+
+          <div class="result-box">
+
+            <div class="result-header">
+              <span>HASIL PROSES</span>
+            </div>
+
+            <pre id="feistel-output">Hasil akan muncul di sini...</pre>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="algorithm-bottom">
+
+      <a href="block.html" class="btn btn-secondary">
+         Kembali ke Block Cipher
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        🔐 Kripto<span>Lab</span>
+      </div>
+
+      <p>
+        Cryptography Learning Lab — UTS Kriptografi 2026
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="js/util.js"></script>
+<script src="js/block.js"></script>
+
+<script>
+  const feistelTextInput = document.getElementById('feistel-text');
+  const feistelKeyInput = document.getElementById('feistel-key');
+  const feistelOutputBox = document.getElementById('feistel-output');
+
+  document.getElementById('feistel-encrypt').addEventListener('click', () => {
+    try {
+      const result = feEnc(
+        feistelTextInput.value,
+        feistelKeyInput.value
+      );
+
+      feistelOutputBox.textContent = result;
+
+    } catch (error) {
+      feistelOutputBox.textContent = 'Error: ' + error.message;
+    }
+  });
+
+  document.getElementById('feistel-decrypt').addEventListener('click', () => {
+    try {
+      const result = feDec(
+        feistelTextInput.value.trim(),
+        feistelKeyInput.value
+      );
+
+      feistelOutputBox.textContent = result;
+
+    } catch (error) {
+      feistelOutputBox.textContent = 'Error: ' + error.message;
+    }
+  });
+</script>

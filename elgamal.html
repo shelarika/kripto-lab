@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElGamal - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        PUBLIC KEY CRYPTOGRAPHY
+      </div>
+
+      <h1>ElGamal</h1>
+
+      <p>
+        Algoritma kriptografi asimetris yang menggunakan
+        konsep logaritma diskrit untuk melakukan enkripsi
+        dan dekripsi pesan.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu ElGamal?</h2>
+      </div>
+
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          〔  〕
+        </div>
+
+        <div>
+
+          <p>
+            ElGamal merupakan algoritma kriptografi
+            asimetris yang menggunakan pasangan
+            <strong>public key</strong> dan
+            <strong>private key</strong>.
+          </p>
+
+          <p>
+            Algoritma ini menggunakan operasi perpangkatan
+            modular dan keamanan yang berkaitan dengan
+            sulitnya menyelesaikan masalah logaritma diskrit.
+          </p>
+
+          <p>
+            Salah satu karakteristik ElGamal adalah hasil
+            ciphertext terdiri dari dua nilai.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja ElGamal</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Parameter</h3>
+
+          <p>
+            Tentukan bilangan prima p dan generator g.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Buat Kunci</h3>
+
+          <p>
+            Pilih private key x kemudian hitung
+            public key y.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Enkripsi</h3>
+
+          <p>
+            Pilih bilangan acak k dan hitung
+            ciphertext menggunakan public key.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Dekripsi</h3>
+
+          <p>
+            Gunakan private key untuk mendapatkan
+            kembali pesan asli.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — RUMUS
+        </span>
+
+        <h2>Rumus Dasar ElGamal</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Public key:</strong>
+          y = g<sup>x</sup> mod p
+        </p>
+
+        <p>
+          <strong>Ciphertext pertama:</strong>
+          c₁ = g<sup>k</sup> mod p
+        </p>
+
+        <p>
+          <strong>Ciphertext kedua:</strong>
+          c₂ = m × y<sup>k</sup> mod p
+        </p>
+
+        <p>
+          <strong>Dekripsi:</strong>
+          m = c₂ × (c₁<sup>x</sup>)<sup>−1</sup> mod p
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba ElGamal</h2>
+
+        <p>
+          Gunakan angka kecil untuk melihat proses
+          pembentukan kunci, enkripsi, dan dekripsi.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+
+        <!-- PARAMETERS -->
+
+        <h3>Parameter</h3>
+
+        <div class="input-grid">
+
+          <div class="input-group">
+
+            <label for="eg-p">
+              Bilangan Prima (p)
+            </label>
+
+            <input
+              type="number"
+              id="eg-p"
+              value="467"
+              min="3"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="eg-g">
+              Generator (g)
+            </label>
+
+            <input
+              type="number"
+              id="eg-g"
+              value="2"
+              min="2"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- PRIVATE KEY -->
+
+        <div class="input-grid">
+
+          <div class="input-group">
+
+            <label for="eg-x">
+              Private Key (x)
+            </label>
+
+            <input
+              type="number"
+              id="eg-x"
+              value="127"
+              min="1"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="eg-k">
+              Random k
+            </label>
+
+            <input
+              type="number"
+              id="eg-k"
+              value="53"
+              min="1"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="input-group">
+
+          <label for="eg-message">
+            Pesan berupa angka
+          </label>
+
+          <input
+            type="number"
+            id="eg-message"
+            value="123"
+            min="1"
+          >
+
+          <small>
+            Pesan harus lebih kecil dari p.
+          </small>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="simulation-buttons">
+
+          <button
+            id="eg-generate"
+            class="btn btn-primary"
+          >
+            🔑 Generate Public Key
+          </button>
+
+          <button
+            id="eg-encrypt"
+            class="btn btn-primary"
+          >
+            🔐 Enkripsi
+          </button>
+
+          <button
+            id="eg-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+          <button
+            id="eg-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <!-- PUBLIC KEY -->
+
+        <div class="input-group">
+
+          <label for="eg-y">
+            Public Key (y)
+          </label>
+
+          <input
+            id="eg-y"
+            readonly
+            placeholder="Public key akan muncul di sini..."
+          >
+
+        </div>
+
+
+        <!-- CIPHERTEXT -->
+
+        <div class="key-grid">
+
+          <div class="input-group">
+
+            <label for="eg-c1">
+              Ciphertext c₁
+            </label>
+
+            <input
+              id="eg-c1"
+              readonly
+              placeholder="c₁..."
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="eg-c2">
+              Ciphertext c₂
+            </label>
+
+            <input
+              id="eg-c2"
+              readonly
+              placeholder="c₂..."
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="eg-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- NOTE -->
+
+      <div class="info-box">
+
+        <p>
+          Simulasi menggunakan bilangan kecil agar
+          proses matematika mudah dipelajari. Implementasi
+          nyata membutuhkan parameter yang jauh lebih besar.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const pInput =
+      document.getElementById('eg-p');
+
+    const gInput =
+      document.getElementById('eg-g');
+
+    const xInput =
+      document.getElementById('eg-x');
+
+    const kInput =
+      document.getElementById('eg-k');
+
+    const messageInput =
+      document.getElementById('eg-message');
+
+    const yOutput =
+      document.getElementById('eg-y');
+
+    const c1Output =
+      document.getElementById('eg-c1');
+
+    const c2Output =
+      document.getElementById('eg-c2');
+
+    const output =
+      document.getElementById('eg-output');
+
+
+    // Modular exponentiation
+    function modPow(base, exponent, modulus) {
+
+      let result = 1n;
+
+      let b =
+        BigInt(base) %
+        BigInt(modulus);
+
+      let e =
+        BigInt(exponent);
+
+      const m =
+        BigInt(modulus);
+
+
+      while (e > 0n) {
+
+        if (e % 2n === 1n) {
+
+          result =
+            (result * b) % m;
+
+        }
+
+        b =
+          (b * b) % m;
+
+        e =
+          e / 2n;
+
+      }
+
+      return result;
+
+    }
+
+
+    // Extended Euclidean Algorithm
+    function extendedGCD(a, b) {
+
+      let oldR = BigInt(a);
+      let r = BigInt(b);
+
+      let oldS = 1n;
+      let s = 0n;
+
+      while (r !== 0n) {
+
+        const quotient =
+          oldR / r;
+
+        [oldR, r] =
+          [r, oldR - quotient * r];
+
+        [oldS, s] =
+          [s, oldS - quotient * s];
+
+      }
+
+      return {
+        gcd: oldR,
+        x: oldS
+      };
+
+    }
+
+
+    // Modular inverse
+    function modInverse(a, modulus) {
+
+      const result =
+        extendedGCD(a, modulus);
+
+      if (result.gcd !== 1n) {
+
+        throw new Error(
+          'Modular inverse tidak ditemukan.'
+        );
+
+      }
+
+      return (
+        (result.x % BigInt(modulus))
+        + BigInt(modulus)
+      ) % BigInt(modulus);
+
+    }
+
+
+    // Generate public key
+    document
+      .getElementById('eg-generate')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const p =
+              BigInt(pInput.value);
+
+            const g =
+              BigInt(gInput.value);
+
+            const x =
+              BigInt(xInput.value);
+
+
+            if (p <= 2n) {
+
+              throw new Error(
+                'p harus lebih besar dari 2.'
+              );
+
+            }
+
+
+            if (g <= 1n || g >= p) {
+
+              throw new Error(
+                'g harus lebih besar dari 1 dan lebih kecil dari p.'
+              );
+
+            }
+
+
+            if (x <= 0n || x >= p - 1n) {
+
+              throw new Error(
+                'Private key x harus berada di antara 1 dan p−2.'
+              );
+
+            }
+
+
+            const y =
+              modPow(g, x, p);
+
+
+            yOutput.value =
+              y.toString();
+
+
+            output.textContent =
+              'Public key berhasil dibuat.';
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // ENCRYPT
+    document
+      .getElementById('eg-encrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const p =
+              BigInt(pInput.value);
+
+            const g =
+              BigInt(gInput.value);
+
+            const x =
+              BigInt(xInput.value);
+
+            const k =
+              BigInt(kInput.value);
+
+            const m =
+              BigInt(messageInput.value);
+
+
+            if (m <= 0n || m >= p) {
+
+              throw new Error(
+                'Pesan harus lebih besar dari 0 dan lebih kecil dari p.'
+              );
+
+            }
+
+
+            if (k <= 0n || k >= p - 1n) {
+
+              throw new Error(
+                'Nilai k harus berada di antara 1 dan p−2.'
+              );
+
+            }
+
+
+            const y =
+              modPow(g, x, p);
+
+
+            const c1 =
+              modPow(g, k, p);
+
+
+            const shared =
+              modPow(y, k, p);
+
+
+            const c2 =
+              (m * shared) % p;
+
+
+            yOutput.value =
+              y.toString();
+
+            c1Output.value =
+              c1.toString();
+
+            c2Output.value =
+              c2.toString();
+
+
+            output.textContent =
+              'Enkripsi berhasil. Ciphertext adalah (c₁, c₂) = (' +
+              c1.toString() +
+              ', ' +
+              c2.toString() +
+              ').';
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // DECRYPT
+    document
+      .getElementById('eg-decrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const p =
+              BigInt(pInput.value);
+
+            const x =
+              BigInt(xInput.value);
+
+            const c1 =
+              BigInt(c1Output.value);
+
+            const c2 =
+              BigInt(c2Output.value);
+
+
+            if (!c1Output.value ||
+                !c2Output.value) {
+
+              throw new Error(
+                'Lakukan enkripsi terlebih dahulu.'
+              );
+
+            }
+
+
+            const shared =
+              modPow(c1, x, p);
+
+
+            const inverse =
+              modInverse(shared, p);
+
+
+            const message =
+              (c2 * inverse) % p;
+
+
+            output.textContent =
+              'Pesan asli berhasil dikembalikan: ' +
+              message.toString();
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Dekripsi gagal: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+    document
+      .getElementById('eg-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          pInput.value = '467';
+          gInput.value = '2';
+          xInput.value = '127';
+          kInput.value = '53';
+          messageInput.value = '123';
+
+          yOutput.value = '';
+          c1Output.value = '';
+          c2Output.value = '';
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

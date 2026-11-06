@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECDH - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html" class="active">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        KEY AGREEMENT
+      </div>
+
+      <h1>ECDH</h1>
+
+      <p>
+        Elliptic Curve Diffie-Hellman untuk membentuk
+        shared secret antara dua pihak menggunakan
+        kriptografi kurva eliptik.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu ECDH?</h2>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          「  」
+        </div>
+
+        <div>
+
+          <p>
+            ECDH atau Elliptic Curve Diffie-Hellman merupakan
+            algoritma pertukaran kunci yang memungkinkan dua
+            pihak menghasilkan shared secret tanpa mengirimkan
+            secret tersebut secara langsung.
+          </p>
+
+          <p>
+            Masing-masing pihak memiliki private key dan
+            public key. Public key dapat dibagikan, sedangkan
+            private key harus tetap dirahasiakan.
+          </p>
+
+          <p>
+            Setelah proses pertukaran public key, kedua pihak
+            dapat menghitung shared secret yang sama.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja ECDH</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Key A</h3>
+
+          <p>
+            Pihak A membuat pasangan private key
+            dan public key.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Key B</h3>
+
+          <p>
+            Pihak B juga membuat pasangan private key
+            dan public key.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Tukar Public Key</h3>
+
+          <p>
+            Kedua pihak saling bertukar public key.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Shared Secret</h3>
+
+          <p>
+            Masing-masing pihak menghitung shared secret
+            menggunakan private key sendiri dan public key
+            pihak lainnya.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONCEPT -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — KONSEP
+        </span>
+
+        <h2>Komponen ECDH</h2>
+
+      </div>
+
+
+      <div class="algorithm-grid">
+
+        <div class="algorithm-page-card">
+
+          <div class="card-icon">
+            🔒
+          </div>
+
+          <h3>Private Key</h3>
+
+          <p>
+            Kunci rahasia yang digunakan untuk
+            menghitung shared secret.
+          </p>
+
+        </div>
+
+
+        <div class="algorithm-page-card">
+
+          <div class="card-icon">
+            🔓
+          </div>
+
+          <h3>Public Key</h3>
+
+          <p>
+            Kunci yang dapat dibagikan kepada
+            pihak lain.
+          </p>
+
+        </div>
+
+
+        <div class="algorithm-page-card">
+
+          <div class="card-icon">
+            🤝
+          </div>
+
+          <h3>Shared Secret</h3>
+
+          <p>
+            Nilai rahasia yang dihasilkan oleh
+            kedua pihak dan seharusnya sama.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba ECDH</h2>
+
+        <p>
+          Simulasikan proses pertukaran kunci antara
+          dua pihak dan lihat apakah shared secret
+          yang dihasilkan sama.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="simulation-buttons">
+
+          <button
+            id="ecdh-generate"
+            class="btn btn-primary"
+          >
+            🔑 Generate Key A & B
+          </button>
+
+          <button
+            id="ecdh-exchange"
+            class="btn btn-primary"
+          >
+            🤝 Hitung Shared Secret
+          </button>
+
+          <button
+            id="ecdh-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <!-- PARTY A -->
+
+        <div class="input-group">
+
+          <label>
+            Public Key A
+          </label>
+
+          <textarea
+            id="ecdh-public-a"
+            rows="5"
+            readonly
+            placeholder="Public key A..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label>
+            Private Key A
+          </label>
+
+          <textarea
+            id="ecdh-private-a"
+            rows="5"
+            readonly
+            placeholder="Private key A..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- PARTY B -->
+
+        <div class="input-group">
+
+          <label>
+            Public Key B
+          </label>
+
+          <textarea
+            id="ecdh-public-b"
+            rows="5"
+            readonly
+            placeholder="Public key B..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label>
+            Private Key B
+          </label>
+
+          <textarea
+            id="ecdh-private-b"
+            rows="5"
+            readonly
+            placeholder="Private key B..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- SECRET A -->
+
+        <div class="input-group">
+
+          <label>
+            Shared Secret A
+          </label>
+
+          <textarea
+            id="ecdh-secret-a"
+            rows="4"
+            readonly
+            placeholder="Shared secret A..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- SECRET B -->
+
+        <div class="input-group">
+
+          <label>
+            Shared Secret B
+          </label>
+
+          <textarea
+            id="ecdh-secret-b"
+            rows="4"
+            readonly
+            placeholder="Shared secret B..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+
+        <div class="output-group">
+
+          <label>
+            Status
+          </label>
+
+          <div
+            id="ecdh-output"
+            class="output-box"
+          >
+            Hasil proses akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Shared secret tidak perlu dikirimkan melalui jaringan.
+          Kedua pihak dapat menghasilkan nilai yang sama
+          berdasarkan private key masing-masing dan public key
+          pihak lainnya.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="fungsi.html"
+        class="btn btn-secondary"
+      >
+         Kembali ke Fungsi Kriptografi
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>
+          🔐 KRIPTO LAB
+        </strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>
+          Teknik Informatika
+        </p>
+
+        <p>
+          Universitas Malikussaleh
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    let ecdhKeyA = null;
+    let ecdhKeyB = null;
+
+
+    const publicA =
+      document.getElementById('ecdh-public-a');
+
+    const privateA =
+      document.getElementById('ecdh-private-a');
+
+    const publicB =
+      document.getElementById('ecdh-public-b');
+
+    const privateB =
+      document.getElementById('ecdh-private-b');
+
+    const secretA =
+      document.getElementById('ecdh-secret-a');
+
+    const secretB =
+      document.getElementById('ecdh-secret-b');
+
+    const output =
+      document.getElementById('ecdh-output');
+
+
+    function bufferToHex(buffer) {
+
+      const bytes =
+        new Uint8Array(buffer);
+
+      return Array
+        .from(bytes)
+        .map(
+          byte =>
+            byte
+              .toString(16)
+              .padStart(2, '0')
+        )
+        .join('');
+
+    }
+
+
+    // GENERATE KEYS
+
+    document
+      .getElementById('ecdh-generate')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            ecdhKeyA =
+              await crypto.subtle.generateKey(
+                {
+                  name: 'ECDH',
+                  namedCurve: 'P-256'
+                },
+                true,
+                [
+                  'deriveKey',
+                  'deriveBits'
+                ]
+              );
+
+
+            ecdhKeyB =
+              await crypto.subtle.generateKey(
+                {
+                  name: 'ECDH',
+                  namedCurve: 'P-256'
+                },
+                true,
+                [
+                  'deriveKey',
+                  'deriveBits'
+                ]
+              );
+
+
+            const publicJwkA =
+              await crypto.subtle.exportKey(
+                'jwk',
+                ecdhKeyA.publicKey
+              );
+
+
+            const privateJwkA =
+              await crypto.subtle.exportKey(
+                'jwk',
+                ecdhKeyA.privateKey
+              );
+
+
+            const publicJwkB =
+              await crypto.subtle.exportKey(
+                'jwk',
+                ecdhKeyB.publicKey
+              );
+
+
+            const privateJwkB =
+              await crypto.subtle.exportKey(
+                'jwk',
+                ecdhKeyB.privateKey
+              );
+
+
+            publicA.value =
+              JSON.stringify(
+                publicJwkA,
+                null,
+                2
+              );
+
+
+            privateA.value =
+              JSON.stringify(
+                privateJwkA,
+                null,
+                2
+              );
+
+
+            publicB.value =
+              JSON.stringify(
+                publicJwkB,
+                null,
+                2
+              );
+
+
+            privateB.value =
+              JSON.stringify(
+                privateJwkB,
+                null,
+                2
+              );
+
+
+            output.textContent =
+              '✓ Key A dan Key B berhasil dibuat.';
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // DERIVE SHARED SECRET
+
+    document
+      .getElementById('ecdh-exchange')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            if (!ecdhKeyA || !ecdhKeyB) {
+
+              output.textContent =
+                'Generate Key A & B terlebih dahulu.';
+
+              return;
+
+            }
+
+
+            const sharedA =
+              await crypto.subtle.deriveBits(
+                {
+                  name: 'ECDH',
+                  public:
+                    ecdhKeyB.publicKey
+                },
+                ecdhKeyA.privateKey,
+                256
+              );
+
+
+            const sharedB =
+              await crypto.subtle.deriveBits(
+                {
+                  name: 'ECDH',
+                  public:
+                    ecdhKeyA.publicKey
+                },
+                ecdhKeyB.privateKey,
+                256
+              );
+
+
+            const hexA =
+              bufferToHex(sharedA);
+
+            const hexB =
+              bufferToHex(sharedB);
+
+
+            secretA.value =
+              hexA;
+
+            secretB.value =
+              hexB;
+
+
+            if (hexA === hexB) {
+
+              output.textContent =
+                '✓ Berhasil! Shared Secret A dan B sama.';
+
+            } else {
+
+              output.textContent =
+                '✗ Shared Secret berbeda.';
+
+            }
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+
+    document
+      .getElementById('ecdh-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          publicA.value = '';
+          privateA.value = '';
+
+          publicB.value = '';
+          privateB.value = '';
+
+          secretA.value = '';
+          secretB.value = '';
+
+          output.textContent =
+            'Hasil proses akan muncul di sini...';
+
+          ecdhKeyA = null;
+          ecdhKeyB = null;
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

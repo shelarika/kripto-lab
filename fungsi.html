@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fungsi Kriptografi - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html" class="active">
+          Fungsi Kriptografi
+        </a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- CATEGORY HEADER -->
+  <section class="category-page-header">
+    <div class="container">
+
+      <div class="section-badge">
+        KATEGORI 03
+      </div>
+
+      <h1>Fungsi Kriptografi</h1>
+
+      <p>
+        Pelajari algoritma kriptografi berdasarkan fungsi
+        utamanya, mulai dari hashing, autentikasi,
+        tanda tangan digital, hingga pertukaran kunci.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- INTRODUCTION -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu Fungsi Kriptografi?</h2>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <div>
+
+          <p>
+            Kriptografi tidak hanya digunakan untuk mengenkripsi
+            pesan. Setiap algoritma dapat memiliki fungsi yang
+            berbeda, seperti menghasilkan nilai hash,
+            memastikan keaslian pesan, membuat tanda tangan
+            digital, atau melakukan pertukaran kunci.
+          </p>
+
+          <p>
+            Pada bagian ini, Kripto Lab menyediakan beberapa
+            algoritma yang dikelompokkan berdasarkan fungsi
+            utamanya agar lebih mudah dipelajari dan
+            dibandingkan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ALGORITHM LIST -->
+  <section class="algorithm-section fungsi-algorithm-section">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — ALGORITMA
+        </span>
+
+        <h2>Pilih Algoritma</h2>
+
+        <p>
+          Pilih salah satu algoritma untuk melihat penjelasan
+          dan mencoba simulasi interaktifnya.
+        </p>
+
+      </div>
+
+
+      <div class="algorithm-grid">
+
+
+        <!-- SHA-1 -->
+        <a
+          href="sha1.html"
+          class="algorithm-page-card"
+        >
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              HASH
+            </span>
+
+            <h3>SHA-1</h3>
+
+            <p>
+              Fungsi hash yang menghasilkan nilai hash
+              sepanjang 160-bit dari suatu data.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- SHA-256 -->
+        <a
+          href="sha256.html"
+          class="algorithm-page-card"
+        >
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              HASH
+            </span>
+
+            <h3>SHA-256</h3>
+
+            <p>
+              Algoritma hash yang menghasilkan nilai
+              sepanjang 256-bit.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- SHA-512 -->
+        <a
+          href="sha512.html"
+          class="algorithm-page-card"
+        >
+
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              HASH
+            </span>
+
+            <h3>SHA-512</h3>
+
+            <p>
+              Algoritma hash dari keluarga SHA-2 dengan
+              output sepanjang 512-bit.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- HMAC -->
+        <a
+          href="hmac.html"
+          class="algorithm-page-card"
+        >
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              AUTENTIKASI
+            </span>
+
+            <h3>HMAC</h3>
+
+            <p>
+              Mekanisme autentikasi pesan menggunakan
+              fungsi hash dan kunci rahasia.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- ECDSA -->
+        <a
+          href="ecdsa.html"
+          class="algorithm-page-card"
+        >
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              DIGITAL SIGNATURE
+            </span>
+
+            <h3>ECDSA</h3>
+
+            <p>
+              Algoritma tanda tangan digital berbasis
+              Elliptic Curve Cryptography.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- RSA-OAEP -->
+        <a
+          href="rsa-oaep.html"
+          class="algorithm-page-card"
+        >
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              ENKRIPSI
+            </span>
+
+            <h3>RSA-OAEP</h3>
+
+            <p>
+              Skema enkripsi berbasis RSA dengan
+              Optimal Asymmetric Encryption Padding.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- ECDH -->
+        <a
+          href="ecdh.html"
+          class="algorithm-page-card"
+        >
+
+          <div class="algorithm-card-content">
+
+            <span class="algorithm-tag">
+              KEY EXCHANGE
+            </span>
+
+            <h3>ECDH</h3>
+
+            <p>
+              Protokol pertukaran kunci yang menggunakan
+              Elliptic Curve Diffie-Hellman.
+            </p>
+
+            <span class="algorithm-link">
+              Pelajari 
+            </span>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- LEARNING FLOW -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — ALUR BELAJAR
+        </span>
+
+        <h2>Belajar Secara Bertahap</h2>
+
+      </div>
+
+
+      <div class="fungsi-process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Pilih Fungsi</h3>
+
+          <p>
+            Tentukan fungsi kriptografi yang ingin
+            kamu pelajari.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Pahami Konsep</h3>
+
+          <p>
+            Baca penjelasan singkat mengenai
+            algoritma tersebut.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Coba Simulasi</h3>
+
+          <p>
+            Masukkan data dan jalankan algoritma
+            secara langsung.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Lihat Hasil</h3>
+
+          <p>
+            Amati hasil proses dan pahami perubahan
+            data yang terjadi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK HOME -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="index.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Home
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>
+          🔐 KRIPTO LAB
+        </strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

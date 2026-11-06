@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHA-512 - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html" class="active">
+          Fungsi Kriptografi
+        </a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+    <div class="container">
+
+      <div class="section-badge">
+        HASH FUNCTION
+      </div>
+
+      <h1>SHA-512</h1>
+
+      <p>
+        Algoritma hash dari keluarga SHA-2 yang menghasilkan
+        nilai hash sepanjang 512-bit.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu SHA-512?</h2>
+
+      </div>
+
+      <div class="info-box">
+
+        <div>
+
+          <p>
+            SHA-512 atau Secure Hash Algorithm 512-bit
+            merupakan fungsi hash dari keluarga SHA-2.
+            Algoritma ini menghasilkan nilai hash sepanjang
+            512-bit.
+          </p>
+
+          <p>
+            Hasil SHA-512 biasanya ditampilkan dalam bentuk
+            hexadecimal sepanjang 128 karakter. Seperti
+            fungsi hash lainnya, perubahan kecil pada input
+            dapat menghasilkan nilai hash yang sangat berbeda.
+          </p>
+
+          <p>
+            Pada Kripto Lab, kamu dapat memasukkan teks
+            kemudian melihat hasil hash SHA-512 secara
+            langsung.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja SHA-512</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Input Data</h3>
+
+          <p>
+            Data dengan panjang bebas dimasukkan sebagai
+            input algoritma.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Padding</h3>
+
+          <p>
+            Pesan diberi padding agar dapat diproses dalam
+            blok berukuran 1024-bit.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Compression</h3>
+
+          <p>
+            Setiap blok diproses melalui fungsi kompresi
+            SHA-512 dalam beberapa ronde.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Hash 512-bit</h3>
+
+          <p>
+            Hasil akhir berupa nilai hash sepanjang
+            512-bit atau 128 karakter hexadecimal.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CHARACTERISTICS -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — KARAKTERISTIK
+        </span>
+
+        <h2>SHA-512</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Ukuran blok:</strong>
+          1024-bit
+        </p>
+
+        <p>
+          <strong>Ukuran output:</strong>
+          512-bit
+        </p>
+
+        <p>
+          <strong>Output hexadecimal:</strong>
+          128 karakter
+        </p>
+
+        <p>
+          <strong>Jumlah ronde:</strong>
+          80 ronde
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba SHA-512</h2>
+
+        <p>
+          Masukkan teks untuk menghasilkan nilai hash
+          SHA-512.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="sha512-text">
+            Teks
+          </label>
+
+          <textarea
+            id="sha512-text"
+            rows="6"
+            placeholder="Masukkan teks yang ingin di-hash..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="sha512-generate"
+            class="btn btn-primary"
+          >
+            🔐 Generate Hash
+          </button>
+
+          <button
+            id="sha512-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            SHA-512 Hash
+          </label>
+
+          <div
+            id="sha512-output"
+            class="output-box"
+          >
+            Hasil hash akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          SHA-512 menghasilkan output dengan panjang tetap,
+          yaitu 512-bit atau 128 karakter hexadecimal.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="fungsi.html"
+        class="btn btn-secondary"
+      >
+         Kembali ke Fungsi Kriptografi
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>
+          🔐 KRIPTO LAB
+        </strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const sha512Text =
+      document.getElementById('sha512-text');
+
+    const sha512Output =
+      document.getElementById('sha512-output');
+
+
+    // ArrayBuffer → HEX
+    function sha512BufferToHex(buffer) {
+
+      const bytes =
+        new Uint8Array(buffer);
+
+      return Array
+        .from(bytes)
+        .map(
+          byte =>
+            byte
+              .toString(16)
+              .padStart(2, '0')
+        )
+        .join('');
+
+    }
+
+
+    // Generate SHA-512
+    document
+      .getElementById('sha512-generate')
+      .addEventListener(
+        'click',
+        async () => {
+
+          const text =
+            sha512Text.value;
+
+          if (!text) {
+
+            sha512Output.textContent =
+              'Teks harus diisi.';
+
+            return;
+
+          }
+
+
+          try {
+
+            const data =
+              new TextEncoder().encode(text);
+
+            const hash =
+              await crypto.subtle.digest(
+                'SHA-512',
+                data
+              );
+
+            sha512Output.textContent =
+              sha512BufferToHex(hash);
+
+          } catch (error) {
+
+            sha512Output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // Clear
+    document
+      .getElementById('sha512-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          sha512Text.value = '';
+
+          sha512Output.textContent =
+            'Hasil hash akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

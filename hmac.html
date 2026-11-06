@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMAC - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html" class="active">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+    <div class="container">
+
+      <div class="section-badge">
+        MESSAGE AUTHENTICATION
+      </div>
+
+      <h1>HMAC</h1>
+
+      <p>
+        Hash-based Message Authentication Code untuk memastikan
+        integritas dan autentikasi pesan menggunakan kunci rahasia.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu HMAC?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ⟡
+        </div>
+
+        <div>
+
+          <p>
+            HMAC atau Hash-based Message Authentication Code
+            merupakan mekanisme autentikasi pesan yang menggunakan
+            fungsi hash dan sebuah kunci rahasia.
+          </p>
+
+          <p>
+            HMAC dapat digunakan untuk membantu memastikan bahwa
+            pesan tidak berubah selama proses pengiriman dan pesan
+            berasal dari pihak yang memiliki kunci rahasia.
+          </p>
+
+          <p>
+            Pada Kripto Lab, kamu dapat memasukkan pesan dan kunci
+            untuk menghasilkan nilai HMAC secara langsung.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja HMAC</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">01</div>
+
+          <h3>Pesan</h3>
+
+          <p>
+            Pesan yang ingin dilindungi dimasukkan sebagai
+            input algoritma.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">02</div>
+
+          <h3>Kunci Rahasia</h3>
+
+          <p>
+            Sebuah kunci rahasia digunakan sebagai bagian
+            dari proses pembentukan HMAC.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">03</div>
+
+          <h3>Fungsi Hash</h3>
+
+          <p>
+            Pesan dan kunci diproses menggunakan fungsi hash
+            untuk menghasilkan nilai autentikasi.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">04</div>
+
+          <h3>HMAC</h3>
+
+          <p>
+            Hasil akhirnya berupa message authentication code
+            yang dapat digunakan untuk memverifikasi pesan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — FORMULA
+        </span>
+
+        <h2>Rumus HMAC</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>HMAC:</strong>
+          H((K' ⊕ opad) || H((K' ⊕ ipad) || M))
+        </p>
+
+        <p>
+          <strong>Keterangan:</strong>
+          K = kunci, M = pesan, H = fungsi hash,
+          ipad = inner padding, opad = outer padding.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba HMAC</h2>
+
+        <p>
+          Masukkan pesan dan kunci untuk menghasilkan
+          nilai HMAC.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="hmac-text">
+            Pesan
+          </label>
+
+          <textarea
+            id="hmac-text"
+            rows="5"
+            placeholder="Masukkan pesan..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="hmac-key">
+            Kunci Rahasia
+          </label>
+
+          <input
+            type="text"
+            id="hmac-key"
+            placeholder="Masukkan kunci rahasia..."
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="hmac-algorithm">
+            Algoritma Hash
+          </label>
+
+          <select id="hmac-algorithm">
+
+            <option value="SHA-256">
+              SHA-256
+            </option>
+
+            <option value="SHA-512">
+              SHA-512
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="hmac-generate"
+            class="btn btn-primary"
+          >
+            🔐 Generate HMAC
+          </button>
+
+          <button
+            id="hmac-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            HMAC
+          </label>
+
+          <div
+            id="hmac-output"
+            class="output-box"
+          >
+            Hasil HMAC akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          HMAC menggunakan kunci rahasia sehingga pihak yang
+          tidak memiliki kunci tidak dapat membuat nilai HMAC
+          yang valid untuk pesan tersebut.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="fungsi.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Fungsi Kriptografi
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const hmacText =
+      document.getElementById('hmac-text');
+
+    const hmacKey =
+      document.getElementById('hmac-key');
+
+    const hmacAlgorithm =
+      document.getElementById('hmac-algorithm');
+
+    const hmacOutput =
+      document.getElementById('hmac-output');
+
+
+    function bufferToHex(buffer) {
+
+      const bytes =
+        new Uint8Array(buffer);
+
+      return Array
+        .from(bytes)
+        .map(
+          byte =>
+            byte
+              .toString(16)
+              .padStart(2, '0')
+        )
+        .join('');
+
+    }
+
+
+    // Generate HMAC
+    document
+      .getElementById('hmac-generate')
+      .addEventListener(
+        'click',
+        async () => {
+
+          const message =
+            hmacText.value;
+
+          const key =
+            hmacKey.value;
+
+          const algorithm =
+            hmacAlgorithm.value;
+
+
+          if (!message || !key) {
+
+            hmacOutput.textContent =
+              'Pesan dan kunci harus diisi.';
+
+            return;
+
+          }
+
+
+          try {
+
+            const encoder =
+              new TextEncoder();
+
+            const keyData =
+              encoder.encode(key);
+
+            const messageData =
+              encoder.encode(message);
+
+
+            const cryptoKey =
+              await crypto.subtle.importKey(
+                'raw',
+                keyData,
+                {
+                  name: 'HMAC',
+                  hash: {
+                    name: algorithm
+                  }
+                },
+                false,
+                ['sign']
+              );
+
+
+            const signature =
+              await crypto.subtle.sign(
+                'HMAC',
+                cryptoKey,
+                messageData
+              );
+
+
+            hmacOutput.textContent =
+              bufferToHex(signature);
+
+
+          } catch (error) {
+
+            hmacOutput.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // Clear
+    document
+      .getElementById('hmac-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          hmacText.value = '';
+          hmacKey.value = '';
+          hmacAlgorithm.value = 'SHA-256';
+
+          hmacOutput.textContent =
+            'Hasil HMAC akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

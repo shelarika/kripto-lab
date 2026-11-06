@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigenère Cipher - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        POLYALPHABETIC CIPHER
+      </div>
+
+      <h1>Vigenère Cipher</h1>
+
+      <p>
+        Algoritma substitusi polialfabetik yang menggunakan
+        kata kunci untuk mengenkripsi dan mendekripsi pesan.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu Vigenère Cipher?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          𝒊
+        </div>
+
+        <div>
+
+          <p>
+            Vigenère Cipher merupakan algoritma kriptografi
+            klasik yang menggunakan beberapa alfabet substitusi
+            berdasarkan sebuah kata kunci.
+          </p>
+
+          <p>
+            Setiap huruf pada plaintext digabungkan dengan
+            huruf dari kunci menggunakan operasi modulo 26.
+          </p>
+
+          <p>
+            Karena menggunakan kunci yang dapat berulang,
+            satu huruf plaintext dapat menghasilkan
+            ciphertext yang berbeda.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja Vigenère</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">01</div>
+
+          <h3>Plaintext</h3>
+
+          <p>
+            Masukkan pesan yang ingin dienkripsi.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">02</div>
+
+          <h3>Kata Kunci</h3>
+
+          <p>
+            Kata kunci digunakan sebagai dasar
+            proses substitusi.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">03</div>
+
+          <h3>Operasi Modulo</h3>
+
+          <p>
+            Nilai huruf plaintext dan kunci
+            dijumlahkan dengan modulo 26.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">04</div>
+
+          <h3>Ciphertext</h3>
+
+          <p>
+            Hasil perhitungan diubah kembali
+            menjadi huruf.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — RUMUS
+        </span>
+
+        <h2>Rumus Vigenère</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Enkripsi:</strong>
+          Cᵢ = (Pᵢ + Kᵢ) mod 26
+        </p>
+
+        <p>
+          <strong>Dekripsi:</strong>
+          Pᵢ = (Cᵢ - Kᵢ) mod 26
+        </p>
+
+        <p>
+          <strong>Keterangan:</strong>
+          P = plaintext, C = ciphertext,
+          K = nilai karakter kunci.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba Vigenère Cipher</h2>
+
+        <p>
+          Masukkan teks dan kata kunci untuk melakukan
+          enkripsi atau dekripsi.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="vigenere-text">
+            Teks
+          </label>
+
+          <textarea
+            id="vigenere-text"
+            rows="5"
+            placeholder="Masukkan teks..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="vigenere-key">
+            Kata Kunci
+          </label>
+
+          <input
+            type="text"
+            id="vigenere-key"
+            placeholder="Contoh: KRIPTO"
+          >
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="vigenere-encrypt"
+            class="btn btn-primary"
+          >
+            🔐 Enkripsi
+          </button>
+
+          <button
+            id="vigenere-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+          <button
+            id="vigenere-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="vigenere-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Spasi, angka, dan simbol tidak diproses.
+          Hanya karakter alfabet yang digunakan dalam
+          perhitungan Vigenère.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const textInput =
+      document.getElementById('vigenere-text');
+
+    const keyInput =
+      document.getElementById('vigenere-key');
+
+    const output =
+      document.getElementById('vigenere-output');
+
+
+    function prepareKey(key) {
+
+      return key
+        .replace(/[^a-zA-Z]/g, '')
+        .toUpperCase();
+
+    }
+
+
+    function vigenereEncrypt(text, key) {
+
+      key = prepareKey(key);
+
+      if (!key) {
+        throw new Error(
+          'Kata kunci harus berisi huruf.'
+        );
+      }
+
+      let result = '';
+      let keyIndex = 0;
+
+
+      for (const char of text) {
+
+        const code =
+          char.charCodeAt(0);
+
+
+        if (
+          (code >= 65 && code <= 90) ||
+          (code >= 97 && code <= 122)
+        ) {
+
+          const isUpper =
+            code >= 65 && code <= 90;
+
+          const base =
+            isUpper ? 65 : 97;
+
+          const p =
+            code - base;
+
+          const k =
+            key.charCodeAt(
+              keyIndex % key.length
+            ) - 65;
+
+          const c =
+            (p + k) % 26;
+
+
+          result +=
+            String.fromCharCode(
+              c + base
+            );
+
+          keyIndex++;
+
+        } else {
+
+          result += char;
+
+        }
+
+      }
+
+      return result;
+
+    }
+
+
+    function vigenereDecrypt(text, key) {
+
+      key = prepareKey(key);
+
+      if (!key) {
+        throw new Error(
+          'Kata kunci harus berisi huruf.'
+        );
+      }
+
+      let result = '';
+      let keyIndex = 0;
+
+
+      for (const char of text) {
+
+        const code =
+          char.charCodeAt(0);
+
+
+        if (
+          (code >= 65 && code <= 90) ||
+          (code >= 97 && code <= 122)
+        ) {
+
+          const isUpper =
+            code >= 65 && code <= 90;
+
+          const base =
+            isUpper ? 65 : 97;
+
+          const c =
+            code - base;
+
+          const k =
+            key.charCodeAt(
+              keyIndex % key.length
+            ) - 65;
+
+          const p =
+            ((c - k) % 26 + 26) % 26;
+
+
+          result +=
+            String.fromCharCode(
+              p + base
+            );
+
+          keyIndex++;
+
+        } else {
+
+          result += char;
+
+        }
+
+      }
+
+      return result;
+
+    }
+
+
+    // ENKRIPSI
+
+    document
+      .getElementById('vigenere-encrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const text =
+              textInput.value;
+
+            const key =
+              keyInput.value;
+
+
+            if (!text) {
+
+              output.textContent =
+                'Teks harus diisi.';
+
+              return;
+
+            }
+
+
+            if (!key) {
+
+              output.textContent =
+                'Kata kunci harus diisi.';
+
+              return;
+
+            }
+
+
+            output.textContent =
+              vigenereEncrypt(
+                text,
+                key
+              );
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // DEKRIPSI
+
+    document
+      .getElementById('vigenere-decrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const text =
+              textInput.value;
+
+            const key =
+              keyInput.value;
+
+
+            if (!text) {
+
+              output.textContent =
+                'Teks harus diisi.';
+
+              return;
+
+            }
+
+
+            if (!key) {
+
+              output.textContent =
+                'Kata kunci harus diisi.';
+
+              return;
+
+            }
+
+
+            output.textContent =
+              vigenereDecrypt(
+                text,
+                key
+              );
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+
+    document
+      .getElementById('vigenere-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          textInput.value = '';
+          keyInput.value = '';
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

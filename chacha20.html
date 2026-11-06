@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChaCha20 - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">🔐 KRIPTO LAB</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html" class="active">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+    <div class="container">
+
+      <div class="section-badge">STREAM CIPHER</div>
+
+      <h1>ChaCha20</h1>
+
+      <p>
+        Algoritma stream cipher modern yang menggunakan operasi
+        aritmetika sederhana untuk menghasilkan keystream yang
+        kemudian digunakan untuk mengenkripsi data.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu ChaCha20?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">🗲</div>
+
+        <div>
+          <p>
+            ChaCha20 adalah algoritma stream cipher yang bekerja
+            dengan menghasilkan keystream berdasarkan kunci dan
+            nonce. Keystream tersebut kemudian dikombinasikan
+            dengan plaintext menggunakan operasi XOR.
+          </p>
+
+          <p>
+            Pada implementasi Kripto Lab, kunci yang dimasukkan
+            pengguna diubah menjadi kunci 256-bit menggunakan
+            SHA-256 sebelum digunakan oleh ChaCha20.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">02 — CARA KERJA</span>
+        <h2>Proses ChaCha20</h2>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3>Kunci</h3>
+          <p>
+            Kunci dari pengguna diproses menggunakan SHA-256
+            sehingga menghasilkan kunci 256-bit.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3>Nonce</h3>
+          <p>
+            Sistem membuat nonce acak sepanjang 12 byte untuk
+            setiap proses enkripsi.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">03</div>
+          <h3>Keystream</h3>
+          <p>
+            ChaCha20 menghasilkan keystream berdasarkan kunci,
+            counter, dan nonce.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">04</div>
+          <h3>XOR</h3>
+          <p>
+            Keystream digabungkan dengan plaintext menggunakan
+            operasi XOR untuk menghasilkan ciphertext.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">03 — FORMULA</span>
+        <h2>Konsep Dasar</h2>
+      </div>
+
+      <div class="formula-box">
+        <p>
+          <strong>Ciphertext</strong> = Plaintext ⊕ Keystream
+        </p>
+
+        <p>
+          <strong>Plaintext</strong> = Ciphertext ⊕ Keystream
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">04 — SIMULASI</span>
+        <h2>Coba ChaCha20</h2>
+        <p>
+          Masukkan teks dan kunci, kemudian pilih proses yang
+          ingin dilakukan.
+        </p>
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+          <label for="chacha20-text">
+            Teks / Ciphertext
+          </label>
+
+          <textarea
+            id="chacha20-text"
+            rows="6"
+            placeholder="Masukkan plaintext untuk enkripsi atau ciphertext HEX untuk dekripsi..."
+          ></textarea>
+        </div>
+
+
+        <div class="input-group">
+          <label for="chacha20-key">
+            Kunci
+          </label>
+
+          <input
+            type="text"
+            id="chacha20-key"
+            placeholder="Masukkan kunci..."
+          >
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="chacha20-encrypt"
+            class="btn btn-primary"
+          >
+            🔒 Enkripsi
+          </button>
+
+          <button
+            id="chacha20-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>Hasil</label>
+
+          <div
+            id="chacha20-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Hasil enkripsi berupa HEX yang terdiri dari nonce
+          12 byte diikuti ciphertext. Simpan hasil enkripsi
+          tersebut jika ingin melakukan dekripsi.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+    <div class="container">
+
+      <a href="stream.html" class="btn btn-secondary">
+        Kembali ke Stream Cipher
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+
+      <div>
+        <strong>🔐 KRIPTO LAB</strong>
+        <p>Belajar kriptografi secara interaktif.</p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/util.js"></script>
+  <script src="js/stream.js"></script>
+
+  ```html
+<script>
+  const chachaTextInput =
+    document.getElementById('chacha20-text');
+
+  const chachaKeyInput =
+    document.getElementById('chacha20-key');
+
+  const chachaOutputBox =
+    document.getElementById('chacha20-output');
+
+
+  // Membuat kunci 256-bit dari input
+  async function makeChaChaKey(keyText) {
+    return new Uint8Array(
+      await crypto.subtle.digest(
+        'SHA-256',
+        enc.encode(keyText)
+      )
+    );
+  }
+
+
+  // ENKRIPSI
+  document
+    .getElementById('chacha20-encrypt')
+    .addEventListener('click', async () => {
+
+      try {
+        const text = chachaTextInput.value;
+        const keyText = chachaKeyInput.value;
+
+        if (!text || !keyText) {
+          chachaOutputBox.textContent =
+            'Teks dan kunci harus diisi.';
+          return;
+        }
+
+        const key = await makeChaChaKey(keyText);
+
+        // Nonce 12 byte
+        const nonce = rnd(12);
+
+        const plaintext = enc.encode(text);
+
+        const ciphertext = chacha(
+          key,
+          nonce,
+          plaintext
+        );
+
+        // Gabungkan nonce + ciphertext
+        const result = cat(nonce, ciphertext);
+
+        chachaOutputBox.textContent = hex(result);
+
+      } catch (error) {
+        chachaOutputBox.textContent =
+          'Error: ' + error.message;
+      }
+
+    });
+
+
+  // DEKRIPSI
+  document
+    .getElementById('chacha20-decrypt')
+    .addEventListener('click', async () => {
+
+      try {
+        const text =
+          chachaTextInput.value.trim();
+
+        const keyText =
+          chachaKeyInput.value;
+
+        if (!text || !keyText) {
+          chachaOutputBox.textContent =
+            'Ciphertext dan kunci harus diisi.';
+          return;
+        }
+
+        const raw = unhex(text);
+
+        if (raw.length < 13) {
+          throw Error(
+            'Ciphertext terlalu pendek.'
+          );
+        }
+
+        const key =
+          await makeChaChaKey(keyText);
+
+        // 12 byte pertama adalah nonce
+        const nonce =
+          raw.slice(0, 12);
+
+        // Sisanya adalah ciphertext
+        const ciphertext =
+          raw.slice(12);
+
+        const plaintext =
+          chacha(
+            key,
+            nonce,
+            ciphertext
+          );
+
+        chachaOutputBox.textContent =
+          dec.decode(plaintext);
+
+      } catch (error) {
+        chachaOutputBox.textContent =
+          'Error: ' + error.message;
+      }
+
+    });
+</script>
+</body>
+</html>

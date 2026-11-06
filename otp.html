@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>One-Time Pad | Kripto Lab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 Kripto<span>Lab</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html" class="active">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <span class="section-badge">
+        🗲 Stream Cipher
+      </span>
+
+      <h1>
+        One-Time Pad
+      </h1>
+
+      <p>
+        Metode kriptografi yang menggunakan kunci acak dengan
+        panjang yang sama seperti pesan dan hanya digunakan satu kali.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PENJELASAN -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div>
+
+          <h2>
+            Apa itu One-Time Pad?
+          </h2>
+
+          <p>
+            One-Time Pad (OTP) merupakan metode enkripsi yang
+            menggunakan kunci acak dengan panjang yang sama
+            dengan data yang akan dienkripsi.
+          </p>
+
+          <p>
+            Pada KriptoLab, kunci OTP dibuat secara otomatis
+            ketika proses enkripsi dilakukan. Kunci tersebut
+            harus disimpan karena diperlukan kembali saat
+            proses dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CARA KERJA -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Cara Kerja
+        </span>
+
+        <h2>
+          Proses One-Time Pad
+        </h2>
+
+        <p>
+          OTP bekerja dengan menggabungkan data dan kunci
+          menggunakan operasi XOR.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <span class="process-number">
+            01
+          </span>
+
+          <h3>
+            Plaintext
+          </h3>
+
+          <p>
+            Data atau pesan yang ingin diamankan dimasukkan
+            sebagai plaintext.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            02
+          </span>
+
+          <h3>
+            Kunci Acak
+          </h3>
+
+          <p>
+            Sistem menghasilkan kunci acak dengan panjang
+            yang sama dengan data.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            03
+          </span>
+
+          <h3>
+            XOR
+          </h3>
+
+          <p>
+            Plaintext dikombinasikan dengan kunci menggunakan
+            operasi XOR.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            04
+          </span>
+
+          <h3>
+            Ciphertext
+          </h3>
+
+          <p>
+            Hasil operasi XOR menjadi ciphertext yang dapat
+            digunakan untuk proses dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRINSIP DASAR -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ∑
+        </div>
+
+        <div>
+
+          <h2>
+            Prinsip Dasar
+          </h2>
+
+          <p>
+            Enkripsi OTP menggunakan operasi XOR antara
+            plaintext dan kunci.
+          </p>
+
+          <div class="formula-box">
+            Ciphertext = Plaintext XOR Key
+          </div>
+
+          <p>
+            Untuk mendapatkan kembali plaintext, ciphertext
+            di-XOR dengan kunci yang sama.
+          </p>
+
+          <div class="formula-box">
+            Plaintext = Ciphertext XOR Key
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULASI -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Simulasi
+        </span>
+
+        <h2>
+          Coba One-Time Pad
+        </h2>
+
+        <p>
+          Masukkan teks untuk membuat ciphertext dan kunci OTP
+          secara otomatis.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <!-- TEKS -->
+        <div class="input-group">
+
+          <label for="otp-text">
+            Teks / Ciphertext
+          </label>
+
+          <textarea
+            id="otp-text"
+            placeholder="Masukkan teks..."
+            rows="5"
+          ></textarea>
+
+        </div>
+
+
+        <!-- KUNCI -->
+        <div class="input-group">
+
+          <label for="otp-key">
+            Kunci OTP (HEX)
+          </label>
+
+          <input
+            type="text"
+            id="otp-key"
+            placeholder="Kunci akan muncul otomatis saat enkripsi..."
+          >
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <div class="simulation-buttons">
+
+          <button
+            type="button"
+            id="otp-encrypt"
+            class="btn btn-primary"
+          >
+            🔒 Enkripsi
+          </button>
+
+          <button
+            type="button"
+            id="otp-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="otp-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PERINGATAN -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div>
+
+          <h2>
+            Penting
+          </h2>
+
+          <p>
+            Kunci OTP harus memiliki panjang yang sama dengan
+            ciphertext dan tidak boleh digunakan kembali untuk
+            pesan lain. Simpan kunci yang dihasilkan saat
+            enkripsi sebelum melakukan dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a href="stream.html" class="btn btn-secondary">
+        Kembali ke Stream Cipher
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+
+          <h3>
+            🔐 KriptoLab
+          </h3>
+
+          <p>
+            Media pembelajaran dan simulasi
+            algoritma kriptografi.
+          </p>
+
+        </div>
+
+        <div>
+
+          <p>
+            © 2026 KriptoLab
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/util.js"></script>
+  <script src="js/stream.js"></script>
+
+  <script>
+
+    const otpTextInput =
+      document.getElementById('otp-text');
+
+    const otpKeyInput =
+      document.getElementById('otp-key');
+
+    const otpOutputBox =
+      document.getElementById('otp-output');
+
+
+    // =========================
+    // ENKRIPSI OTP
+    // =========================
+
+    document
+      .getElementById('otp-encrypt')
+      .addEventListener('click', () => {
+
+        try {
+
+          const text =
+            otpTextInput.value;
+
+
+          if (!text) {
+
+            otpOutputBox.textContent =
+              'Teks harus diisi.';
+
+            return;
+          }
+
+
+          // Ubah teks menjadi byte
+          const data =
+            enc.encode(text);
+
+
+          // Buat kunci acak dengan panjang yang sama
+          const key =
+            rnd(data.length);
+
+
+          // Enkripsi menggunakan XOR
+          const ciphertext =
+            data.map(
+              (value, index) =>
+                value ^ key[index]
+            );
+
+
+          // Masukkan kunci ke input
+          otpKeyInput.value =
+            hex(key);
+
+
+          // Tampilkan ciphertext
+          otpOutputBox.textContent =
+            hex(ciphertext);
+
+
+        } catch (error) {
+
+          otpOutputBox.textContent =
+            'Error: ' + error.message;
+
+        }
+
+      });
+
+
+    // =========================
+    // DEKRIPSI OTP
+    // =========================
+
+    document
+      .getElementById('otp-decrypt')
+      .addEventListener('click', () => {
+
+        try {
+
+          const ciphertextText =
+            otpTextInput.value;
+
+          const keyText =
+            otpKeyInput.value;
+
+
+          if (!ciphertextText || !keyText) {
+
+            otpOutputBox.textContent =
+              'Ciphertext dan kunci OTP harus diisi.';
+
+            return;
+          }
+
+
+          // Ubah HEX menjadi byte
+          const ciphertext =
+            unhex(ciphertextText);
+
+          const key =
+            unhex(keyText);
+
+
+          // Panjang harus sama
+          if (
+            ciphertext.length !== key.length
+          ) {
+
+            throw Error(
+              'Panjang kunci harus sama dengan ciphertext.'
+            );
+          }
+
+
+          // Dekripsi menggunakan XOR
+          const plaintext =
+            ciphertext.map(
+              (value, index) =>
+                value ^ key[index]
+            );
+
+
+          // Tampilkan plaintext
+          otpOutputBox.textContent =
+            dec.decode(
+              new Uint8Array(plaintext)
+            );
+
+
+        } catch (error) {
+
+          otpOutputBox.textContent =
+            'Error: ' + error.message;
+
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>

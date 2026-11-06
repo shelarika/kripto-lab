@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHA-1 - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html" class="active">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+    <div class="container">
+
+
+      <div class="section-badge">
+        HASH FUNCTION
+      </div>
+
+      <h1>SHA-1</h1>
+
+      <p>
+        Algoritma hash yang mengubah data dengan panjang
+        bebas menjadi nilai hash berukuran 160-bit.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu SHA-1?</h2>
+
+      </div>
+
+      <div class="info-box">
+
+
+        <div>
+
+          <p>
+            SHA-1 atau Secure Hash Algorithm 1 merupakan
+            fungsi hash yang menghasilkan nilai hash
+            sepanjang 160-bit atau 40 karakter hexadecimal.
+          </p>
+
+          <p>
+            SHA-1 bersifat satu arah. Data yang sudah
+            menghasilkan nilai hash tidak dapat dikembalikan
+            secara langsung menjadi data aslinya.
+          </p>
+
+          <p>
+            Pada Kripto Lab, kamu dapat memasukkan teks
+            dan melihat nilai hash SHA-1 yang dihasilkan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja SHA-1</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Input Data</h3>
+
+          <p>
+            Data yang ingin diproses dimasukkan sebagai
+            input.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Padding</h3>
+
+          <p>
+            Data diproses dengan penambahan padding agar
+            sesuai dengan ukuran blok algoritma.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Proses Hash</h3>
+
+          <p>
+            Data diproses melalui operasi internal SHA-1
+            untuk menghasilkan nilai hash.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Hash 160-bit</h3>
+
+          <p>
+            Hasil akhirnya berupa nilai hash sepanjang
+            160-bit dalam format hexadecimal.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — OUTPUT
+        </span>
+
+        <h2>Karakteristik SHA-1</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Ukuran output:</strong>
+          160-bit
+        </p>
+
+        <p>
+          <strong>Format:</strong>
+          40 karakter hexadecimal
+        </p>
+
+        <p>
+          <strong>Input:</strong>
+          Data dengan panjang bebas
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba SHA-1</h2>
+
+        <p>
+          Masukkan teks untuk menghasilkan nilai hash
+          SHA-1.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="sha1-text">
+            Teks
+          </label>
+
+          <textarea
+            id="sha1-text"
+            rows="6"
+            placeholder="Masukkan teks yang ingin di-hash..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="sha1-generate"
+            class="btn btn-primary"
+          >
+            🔐 Generate Hash
+          </button>
+
+          <button
+            id="sha1-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            SHA-1 Hash
+          </label>
+
+          <div
+            id="sha1-output"
+            class="output-box"
+          >
+            Hasil hash akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Hash SHA-1 akan selalu memiliki panjang 40 karakter
+          hexadecimal untuk input apa pun.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="fungsi.html"
+        class="btn btn-secondary"
+      >
+         Kembali ke Fungsi Kriptografi
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <strong>
+          🔐 KRIPTO LAB
+        </strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+      </div>
+
+      <div>
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/util.js"></script>
+  <script src="js/fungsi.js"></script>
+
+  <script>
+
+    const sha1Text =
+      document.getElementById('sha1-text');
+
+    const sha1Output =
+      document.getElementById('sha1-output');
+
+
+    /*
+      SHA-1 tidak tersedia langsung melalui
+      crypto.subtle pada Web Crypto API.
+
+      Fungsi berikut merupakan implementasi
+      SHA-1 menggunakan JavaScript.
+    */
+
+    function sha1RotateLeft(value, bits) {
+
+      return (
+        (value << bits) |
+        (value >>> (32 - bits))
+      ) >>> 0;
+
+    }
+
+
+    function sha1Hash(message) {
+
+      const bytes =
+        new TextEncoder().encode(message);
+
+      const originalLength =
+        bytes.length;
+
+      const bitLength =
+        originalLength * 8;
+
+
+      // Padding
+      const paddedLength =
+        Math.ceil(
+          (originalLength + 9) / 64
+        ) * 64;
+
+      const padded =
+        new Uint8Array(paddedLength);
+
+      padded.set(bytes);
+
+      padded[originalLength] =
+        0x80;
+
+
+      // Panjang pesan 64-bit
+      const view =
+        new DataView(padded.buffer);
+
+      const high =
+        Math.floor(
+          bitLength / 0x100000000
+        );
+
+      const low =
+        bitLength >>> 0;
+
+      view.setUint32(
+        paddedLength - 8,
+        high,
+        false
+      );
+
+      view.setUint32(
+        paddedLength - 4,
+        low,
+        false
+      );
+
+
+      // Initial hash values
+      let h0 = 0x67452301;
+      let h1 = 0xEFCDAB89;
+      let h2 = 0x98BADCFE;
+      let h3 = 0x10325476;
+      let h4 = 0xC3D2E1F0;
+
+
+      // Proses setiap blok 512-bit
+      for (
+        let offset = 0;
+        offset < padded.length;
+        offset += 64
+      ) {
+
+        const w =
+          new Uint32Array(80);
+
+
+        // 16 word pertama
+        for (let i = 0; i < 16; i++) {
+
+          w[i] =
+            view.getUint32(
+              offset + i * 4,
+              false
+            );
+
+        }
+
+
+        // Expand menjadi 80 word
+        for (let i = 16; i < 80; i++) {
+
+          w[i] =
+            sha1RotateLeft(
+              w[i - 3] ^
+              w[i - 8] ^
+              w[i - 14] ^
+              w[i - 16],
+              1
+            );
+
+        }
+
+
+        let a = h0;
+        let b = h1;
+        let c = h2;
+        let d = h3;
+        let e = h4;
+
+
+        for (let i = 0; i < 80; i++) {
+
+          let f;
+          let k;
+
+
+          if (i < 20) {
+
+            f =
+              (b & c) |
+              ((~b) & d);
+
+            k =
+              0x5A827999;
+
+          } else if (i < 40) {
+
+            f =
+              b ^ c ^ d;
+
+            k =
+              0x6ED9EBA1;
+
+          } else if (i < 60) {
+
+            f =
+              (b & c) |
+              (b & d) |
+              (c & d);
+
+            k =
+              0x8F1BBCDC;
+
+          } else {
+
+            f =
+              b ^ c ^ d;
+
+            k =
+              0xCA62C1D6;
+
+          }
+
+
+          const temp =
+            (
+              sha1RotateLeft(a, 5) +
+              f +
+              e +
+              k +
+              w[i]
+            ) >>> 0;
+
+
+          e = d;
+          d = c;
+          c =
+            sha1RotateLeft(b, 30);
+
+          b = a;
+          a = temp;
+
+        }
+
+
+        h0 = (h0 + a) >>> 0;
+        h1 = (h1 + b) >>> 0;
+        h2 = (h2 + c) >>> 0;
+        h3 = (h3 + d) >>> 0;
+        h4 = (h4 + e) >>> 0;
+
+      }
+
+
+      return [
+        h0,
+        h1,
+        h2,
+        h3,
+        h4
+      ]
+        .map(
+          value =>
+            value
+              .toString(16)
+              .padStart(8, '0')
+        )
+        .join('');
+
+    }
+
+
+    // Generate Hash
+    document
+      .getElementById('sha1-generate')
+      .addEventListener(
+        'click',
+        () => {
+
+          const text =
+            sha1Text.value;
+
+          if (!text) {
+
+            sha1Output.textContent =
+              'Teks harus diisi.';
+
+            return;
+
+          }
+
+
+          try {
+
+            sha1Output.textContent =
+              sha1Hash(text);
+
+          } catch (error) {
+
+            sha1Output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // Clear
+    document
+      .getElementById('sha1-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          sha1Text.value = '';
+
+          sha1Output.textContent =
+            'Hasil hash akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

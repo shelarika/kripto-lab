@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hill Cipher - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        CLASSICAL CRYPTOGRAPHY
+      </div>
+
+      <h1>Hill Cipher</h1>
+
+      <p>
+        Algoritma kriptografi klasik yang menggunakan
+        operasi matriks dan aritmetika modulo untuk
+        mengenkripsi pesan.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu Hill Cipher?</h2>
+      </div>
+
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          🪨
+        </div>
+
+        <div>
+
+          <p>
+            Hill Cipher merupakan algoritma kriptografi
+            klasik yang menggunakan
+            <strong>matriks</strong> sebagai kunci.
+          </p>
+
+          <p>
+            Setiap huruf diubah menjadi nilai numerik,
+            kemudian dikalikan dengan matriks kunci
+            menggunakan operasi modulo 26.
+          </p>
+
+          <p>
+            Agar pesan dapat didekripsi, matriks kunci
+            harus mempunyai invers modulo 26.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja Hill Cipher</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Konversi Huruf</h3>
+
+          <p>
+            Huruf diubah menjadi angka dengan
+            A = 0 sampai Z = 25.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Buat Blok</h3>
+
+          <p>
+            Pesan dibagi menjadi blok sesuai
+            ukuran matriks kunci.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Kalikan Matriks</h3>
+
+          <p>
+            Matriks kunci dikalikan dengan
+            vektor pesan.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Modulo 26</h3>
+
+          <p>
+            Hasil perkalian dikonversi kembali
+            menggunakan modulo 26.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — RUMUS
+        </span>
+
+        <h2>Rumus Dasar</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Enkripsi:</strong>
+          C = K × P mod 26
+        </p>
+
+        <p>
+          <strong>Dekripsi:</strong>
+          P = K<sup>−1</sup> × C mod 26
+        </p>
+
+        <p>
+          <strong>Konversi:</strong>
+          A = 0, B = 1, ..., Z = 25
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba Hill Cipher</h2>
+
+        <p>
+          Gunakan matriks kunci 2 × 2 untuk
+          melakukan enkripsi dan dekripsi.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+
+        <!-- KEY MATRIX -->
+
+        <h3>Matriks Kunci</h3>
+
+        <div class="matrix-input">
+
+          <div class="input-group">
+            <label for="hill-a">a</label>
+
+            <input
+              type="number"
+              id="hill-a"
+              value="3"
+            >
+          </div>
+
+
+          <div class="input-group">
+            <label for="hill-b">b</label>
+
+            <input
+              type="number"
+              id="hill-b"
+              value="3"
+            >
+          </div>
+
+
+          <div class="input-group">
+            <label for="hill-c">c</label>
+
+            <input
+              type="number"
+              id="hill-c"
+              value="2"
+            >
+          </div>
+
+
+          <div class="input-group">
+            <label for="hill-d">d</label>
+
+            <input
+              type="number"
+              id="hill-d"
+              value="5"
+            >
+          </div>
+
+        </div>
+
+
+        <div class="matrix-preview">
+
+          <span>
+            K =
+          </span>
+
+          <div class="matrix-display">
+            <span>
+              <span id="matrix-a">3</span>
+              <span id="matrix-b">3</span>
+            </span>
+
+            <span>
+              <span id="matrix-c">2</span>
+              <span id="matrix-d">5</span>
+            </span>
+          </div>
+
+        </div>
+
+
+        <!-- TEXT -->
+
+        <div class="input-group">
+
+          <label for="hill-text">
+            Pesan
+          </label>
+
+          <textarea
+            id="hill-text"
+            rows="5"
+            placeholder="Masukkan pesan, contoh: HELP"
+          ></textarea>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="simulation-buttons">
+
+          <button
+            id="hill-encrypt"
+            class="btn btn-primary"
+          >
+            🔐 Enkripsi
+          </button>
+
+          <button
+            id="hill-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+          <button
+            id="hill-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="hill-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- NOTE -->
+
+      <div class="info-box">
+
+        <p>
+          Hill Cipher menggunakan matriks yang harus
+          memiliki invers modulo 26. Jika determinan
+          matriks tidak relatif prima terhadap 26,
+          proses dekripsi tidak dapat dilakukan.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+         Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const textInput =
+      document.getElementById('hill-text');
+
+    const output =
+      document.getElementById('hill-output');
+
+
+    const aInput =
+      document.getElementById('hill-a');
+
+    const bInput =
+      document.getElementById('hill-b');
+
+    const cInput =
+      document.getElementById('hill-c');
+
+    const dInput =
+      document.getElementById('hill-d');
+
+
+    // Modulo positif
+    function mod(n, m) {
+
+      return ((n % m) + m) % m;
+
+    }
+
+
+    // Modular inverse
+    function modInverse(a, m) {
+
+      a = mod(a, m);
+
+      for (let x = 1; x < m; x++) {
+
+        if (mod(a * x, m) === 1) {
+          return x;
+        }
+
+      }
+
+      return null;
+
+    }
+
+
+    // Ambil matriks
+    function getMatrix() {
+
+      return [
+
+        [
+          Number(aInput.value),
+          Number(bInput.value)
+        ],
+
+        [
+          Number(cInput.value),
+          Number(dInput.value)
+        ]
+
+      ];
+
+    }
+
+
+    // Validasi matriks
+    function validateMatrix(matrix) {
+
+      const a = matrix[0][0];
+      const b = matrix[0][1];
+      const c = matrix[1][0];
+      const d = matrix[1][1];
+
+      const determinant =
+        mod(a * d - b * c, 26);
+
+      const inverse =
+        modInverse(determinant, 26);
+
+      if (inverse === null) {
+
+        throw new Error(
+          'Matriks tidak memiliki invers modulo 26. Gunakan matriks lain.'
+        );
+
+      }
+
+    }
+
+
+    // Bersihkan teks menjadi huruf
+    function cleanText(text) {
+
+      return text
+        .toUpperCase()
+        .replace(/[^A-Z]/g, '');
+
+    }
+
+
+    // ENKRIPSI
+    function hillEncrypt(text, matrix) {
+
+      const clean =
+        cleanText(text);
+
+      if (!clean) {
+
+        throw new Error(
+          'Pesan harus mengandung huruf A-Z.'
+        );
+
+      }
+
+
+      let padded = clean;
+
+      if (padded.length % 2 !== 0) {
+        padded += 'X';
+      }
+
+
+      let result = '';
+
+
+      for (
+        let i = 0;
+        i < padded.length;
+        i += 2
+      ) {
+
+        const x =
+          padded.charCodeAt(i) - 65;
+
+        const y =
+          padded.charCodeAt(i + 1) - 65;
+
+
+        const c1 =
+          mod(
+            matrix[0][0] * x +
+            matrix[0][1] * y,
+            26
+          );
+
+
+        const c2 =
+          mod(
+            matrix[1][0] * x +
+            matrix[1][1] * y,
+            26
+          );
+
+
+        result +=
+          String.fromCharCode(
+            65 + c1
+          );
+
+        result +=
+          String.fromCharCode(
+            65 + c2
+          );
+
+      }
+
+
+      return result;
+
+    }
+
+
+    // DEKRIPSI
+    function hillDecrypt(text, matrix) {
+
+      const clean =
+        cleanText(text);
+
+      if (!clean) {
+
+        throw new Error(
+          'Ciphertext harus mengandung huruf A-Z.'
+        );
+
+      }
+
+
+      if (clean.length % 2 !== 0) {
+
+        throw new Error(
+          'Panjang ciphertext harus genap.'
+        );
+
+      }
+
+
+      const a =
+        matrix[0][0];
+
+      const b =
+        matrix[0][1];
+
+      const c =
+        matrix[1][0];
+
+      const d =
+        matrix[1][1];
+
+
+      const determinant =
+        mod(a * d - b * c, 26);
+
+
+      const determinantInverse =
+        modInverse(
+          determinant,
+          26
+        );
+
+
+      if (determinantInverse === null) {
+
+        throw new Error(
+          'Matriks tidak memiliki invers modulo 26.'
+        );
+
+      }
+
+
+      // K^-1 =
+      // det^-1 ×
+      // [ d  -b ]
+      // [ -c  a ]
+
+      const inverseMatrix = [
+
+        [
+          mod(
+            determinantInverse * d,
+            26
+          ),
+
+          mod(
+            determinantInverse * -b,
+            26
+          )
+        ],
+
+        [
+          mod(
+            determinantInverse * -c,
+            26
+          ),
+
+          mod(
+            determinantInverse * a,
+            26
+          )
+        ]
+
+      ];
+
+
+      let result = '';
+
+
+      for (
+        let i = 0;
+        i < clean.length;
+        i += 2
+      ) {
+
+        const x =
+          clean.charCodeAt(i) - 65;
+
+        const y =
+          clean.charCodeAt(i + 1) - 65;
+
+
+        const p1 =
+          mod(
+            inverseMatrix[0][0] * x +
+            inverseMatrix[0][1] * y,
+            26
+          );
+
+
+        const p2 =
+          mod(
+            inverseMatrix[1][0] * x +
+            inverseMatrix[1][1] * y,
+            26
+          );
+
+
+        result +=
+          String.fromCharCode(
+            65 + p1
+          );
+
+        result +=
+          String.fromCharCode(
+            65 + p2
+          );
+
+      }
+
+
+      return result;
+
+    }
+
+
+    // ENCRYPT BUTTON
+    document
+      .getElementById('hill-encrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const matrix =
+              getMatrix();
+
+            validateMatrix(matrix);
+
+            const result =
+              hillEncrypt(
+                textInput.value,
+                matrix
+              );
+
+            output.textContent =
+              result;
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // DECRYPT BUTTON
+    document
+      .getElementById('hill-decrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const matrix =
+              getMatrix();
+
+            validateMatrix(matrix);
+
+            const result =
+              hillDecrypt(
+                textInput.value,
+                matrix
+              );
+
+            output.textContent =
+              result;
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // UPDATE MATRIX PREVIEW
+    function updateMatrixPreview() {
+
+      document.getElementById(
+        'matrix-a'
+      ).textContent =
+        aInput.value;
+
+      document.getElementById(
+        'matrix-b'
+      ).textContent =
+        bInput.value;
+
+      document.getElementById(
+        'matrix-c'
+      ).textContent =
+        cInput.value;
+
+      document.getElementById(
+        'matrix-d'
+      ).textContent =
+        dInput.value;
+
+    }
+
+
+    [
+      aInput,
+      bInput,
+      cInput,
+      dInput
+    ].forEach(input => {
+
+      input.addEventListener(
+        'input',
+        updateMatrixPreview
+      );
+
+    });
+
+
+    // CLEAR
+    document
+      .getElementById('hill-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          aInput.value = 3;
+          bInput.value = 3;
+          cInput.value = 2;
+          dInput.value = 5;
+
+          textInput.value = '';
+
+          updateMatrixPreview();
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECC - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        ELLIPTIC CURVE CRYPTOGRAPHY
+      </div>
+
+      <h1>ECC</h1>
+
+      <p>
+        Kriptografi berbasis kurva eliptik yang memanfaatkan
+        operasi matematika pada titik-titik di atas kurva.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu ECC?</h2>
+      </div>
+
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ⌞ ⌝
+        </div>
+
+        <div>
+
+          <p>
+            <strong>Elliptic Curve Cryptography (ECC)</strong>
+            adalah pendekatan kriptografi yang menggunakan
+            struktur matematika kurva eliptik.
+          </p>
+
+          <p>
+            Operasi utama pada ECC dilakukan terhadap
+            titik-titik yang berada pada kurva, termasuk
+            penjumlahan titik dan perkalian skalar.
+          </p>
+
+          <p>
+            ECC banyak digunakan dalam sistem kriptografi
+            modern karena dapat memberikan tingkat keamanan
+            yang tinggi dengan ukuran kunci yang relatif kecil.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Konsep Dasar ECC</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Tentukan Kurva</h3>
+
+          <p>
+            Kurva eliptik ditentukan berdasarkan
+            parameter matematika tertentu.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Pilih Titik</h3>
+
+          <p>
+            Sebuah titik dasar G digunakan
+            sebagai bagian dari sistem.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Private Key</h3>
+
+          <p>
+            Pengguna memilih sebuah bilangan rahasia
+            sebagai private key.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Public Key</h3>
+
+          <p>
+            Public key diperoleh dari perkalian
+            skalar private key dengan titik dasar.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — RUMUS
+        </span>
+
+        <h2>Persamaan Kurva</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Persamaan umum:</strong>
+          y² = x³ + ax + b
+        </p>
+
+        <p>
+          <strong>Perkalian skalar:</strong>
+          Q = dG
+        </p>
+
+        <p>
+          G = titik dasar
+        </p>
+
+        <p>
+          d = private key
+        </p>
+
+        <p>
+          Q = public key
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba ECC</h2>
+
+        <p>
+          Simulasi berikut menggunakan kurva eliptik
+          sederhana di atas finite field agar operasi
+          titik dapat diamati secara langsung.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <!-- CURVE -->
+
+        <h3>Parameter Kurva</h3>
+
+        <div class="input-grid">
+
+          <div class="input-group">
+
+            <label for="ecc-a">
+              Parameter a
+            </label>
+
+            <input
+              type="number"
+              id="ecc-a"
+              value="2"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="ecc-b">
+              Parameter b
+            </label>
+
+            <input
+              type="number"
+              id="ecc-b"
+              value="3"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="ecc-p">
+              Modulus p
+            </label>
+
+            <input
+              type="number"
+              id="ecc-p"
+              value="97"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- BASE POINT -->
+
+        <h3 class="simulation-subtitle">
+          Titik Dasar G
+        </h3>
+
+        <div class="input-grid">
+
+          <div class="input-group">
+
+            <label for="ecc-gx">
+              Gx
+            </label>
+
+            <input
+              type="number"
+              id="ecc-gx"
+              value="3"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="ecc-gy">
+              Gy
+            </label>
+
+            <input
+              type="number"
+              id="ecc-gy"
+              value="6"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- PRIVATE KEY -->
+
+        <div class="input-group">
+
+          <label for="ecc-private">
+            Private Key (d)
+          </label>
+
+          <input
+            type="number"
+            id="ecc-private"
+            value="3"
+            min="1"
+          >
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="simulation-buttons">
+
+          <button
+            id="ecc-calculate"
+            class="btn btn-primary"
+          >
+            🔑 Hitung Public Key
+          </button>
+
+          <button
+            id="ecc-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div class="key-grid">
+
+          <div class="input-group">
+
+            <label>
+              Titik Dasar G
+            </label>
+
+            <input
+              id="ecc-base-output"
+              readonly
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label>
+              Public Key Q
+            </label>
+
+            <input
+              id="ecc-public-output"
+              readonly
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="ecc-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- NOTE -->
+
+      <div class="info-box">
+
+
+        <p>
+          Parameter pada simulasi dibuat kecil untuk
+          mempermudah pembelajaran. Implementasi ECC
+          nyata menggunakan kurva dan parameter standar
+          yang jauh lebih besar.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const aInput =
+      document.getElementById('ecc-a');
+
+    const bInput =
+      document.getElementById('ecc-b');
+
+    const pInput =
+      document.getElementById('ecc-p');
+
+    const gxInput =
+      document.getElementById('ecc-gx');
+
+    const gyInput =
+      document.getElementById('ecc-gy');
+
+    const privateInput =
+      document.getElementById('ecc-private');
+
+    const baseOutput =
+      document.getElementById('ecc-base-output');
+
+    const publicOutput =
+      document.getElementById('ecc-public-output');
+
+    const output =
+      document.getElementById('ecc-output');
+
+
+    // Modulo positif
+    function mod(n, p) {
+      return ((n % p) + p) % p;
+    }
+
+
+    // Modular inverse menggunakan Extended Euclidean
+    function modInverse(value, modulus) {
+
+      let a = mod(value, modulus);
+      let b = modulus;
+
+      let x0 = 1;
+      let x1 = 0;
+
+      while (b !== 0) {
+
+        const q =
+          Math.floor(a / b);
+
+        [a, b] =
+          [b, a - q * b];
+
+        [x0, x1] =
+          [x1, x0 - q * x1];
+
+      }
+
+      if (a !== 1) {
+        throw new Error(
+          'Modular inverse tidak ditemukan.'
+        );
+      }
+
+      return mod(x0, modulus);
+    }
+
+
+    // Cek titik berada di kurva
+    function isOnCurve(point, a, b, p) {
+
+      if (point === null) {
+        return true;
+      }
+
+      const left =
+        mod(
+          point.y * point.y,
+          p
+        );
+
+      const right =
+        mod(
+          point.x * point.x * point.x +
+          a * point.x +
+          b,
+          p
+        );
+
+      return left === right;
+    }
+
+
+    // Penjumlahan titik ECC
+    function pointAdd(P, Q, a, p) {
+
+      // Titik infinity
+      if (P === null) {
+        return Q;
+      }
+
+      if (Q === null) {
+        return P;
+      }
+
+
+      // P + (-P) = O
+      if (
+        P.x === Q.x &&
+        mod(P.y + Q.y, p) === 0
+      ) {
+        return null;
+      }
+
+
+      let lambda;
+
+
+      // Point doubling
+      if (
+        P.x === Q.x &&
+        P.y === Q.y
+      ) {
+
+        if (mod(2 * P.y, p) === 0) {
+          return null;
+        }
+
+        lambda =
+          mod(
+            (3 * P.x * P.x + a) *
+            modInverse(
+              2 * P.y,
+              p
+            ),
+            p
+          );
+
+      }
+
+      // Point addition
+      else {
+
+        lambda =
+          mod(
+            (Q.y - P.y) *
+            modInverse(
+              Q.x - P.x,
+              p
+            ),
+            p
+          );
+
+      }
+
+
+      const x3 =
+        mod(
+          lambda * lambda -
+          P.x -
+          Q.x,
+          p
+        );
+
+
+      const y3 =
+        mod(
+          lambda * (P.x - x3) -
+          P.y,
+          p
+        );
+
+
+      return {
+        x: x3,
+        y: y3
+      };
+
+    }
+
+
+    // Scalar multiplication
+    function scalarMultiply(k, point, a, p) {
+
+      let result = null;
+      let current = point;
+
+      let n = k;
+
+
+      while (n > 0) {
+
+        if (n % 2 === 1) {
+
+          result =
+            pointAdd(
+              result,
+              current,
+              a,
+              p
+            );
+
+        }
+
+        current =
+          pointAdd(
+            current,
+            current,
+            a,
+            p
+          );
+
+        n =
+          Math.floor(n / 2);
+
+      }
+
+
+      return result;
+
+    }
+
+
+    // CALCULATE
+    document
+      .getElementById('ecc-calculate')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const a =
+              Number(aInput.value);
+
+            const b =
+              Number(bInput.value);
+
+            const p =
+              Number(pInput.value);
+
+            const gx =
+              Number(gxInput.value);
+
+            const gy =
+              Number(gyInput.value);
+
+            const d =
+              Number(privateInput.value);
+
+
+            if (!Number.isInteger(a) ||
+                !Number.isInteger(b) ||
+                !Number.isInteger(p) ||
+                !Number.isInteger(gx) ||
+                !Number.isInteger(gy) ||
+                !Number.isInteger(d)) {
+
+              throw new Error(
+                'Semua nilai harus berupa bilangan bulat.'
+              );
+
+            }
+
+
+            if (p <= 3) {
+
+              throw new Error(
+                'Modulus p harus lebih besar dari 3.'
+              );
+
+            }
+
+
+            const discriminant =
+              mod(
+                4 * a * a * a +
+                27 * b * b,
+                p
+              );
+
+
+            if (discriminant === 0) {
+
+              throw new Error(
+                'Kurva tidak valid untuk parameter tersebut.'
+              );
+
+            }
+
+
+            const G = {
+              x: mod(gx, p),
+              y: mod(gy, p)
+            };
+
+
+            if (
+              !isOnCurve(
+                G,
+                a,
+                b,
+                p
+              )
+            ) {
+
+              throw new Error(
+                'Titik G tidak berada pada kurva.'
+              );
+
+            }
+
+
+            if (d <= 0) {
+
+              throw new Error(
+                'Private key harus lebih besar dari 0.'
+              );
+
+            }
+
+
+            const Q =
+              scalarMultiply(
+                d,
+                G,
+                a,
+                p
+              );
+
+
+            baseOutput.value =
+              `(${G.x}, ${G.y})`;
+
+            publicOutput.value =
+              Q === null
+                ? '∞'
+                : `(${Q.x}, ${Q.y})`;
+
+
+            output.textContent =
+              `Public key berhasil dihitung: Q = dG = ${publicOutput.value}`;
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+    document
+      .getElementById('ecc-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          aInput.value = 2;
+          bInput.value = 3;
+          pInput.value = 97;
+
+          gxInput.value = 3;
+          gyInput.value = 6;
+
+          privateInput.value = 5;
+
+          baseOutput.value = '';
+          publicOutput.value = '';
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

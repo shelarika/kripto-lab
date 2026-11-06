@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSA - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        PUBLIC KEY CRYPTOGRAPHY
+      </div>
+
+      <h1>RSA</h1>
+
+      <p>
+        Algoritma kriptografi asimetris yang menggunakan
+        pasangan kunci publik dan kunci privat.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          01 — PENGENALAN
+        </span>
+
+        <h2>Apa itu RSA?</h2>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ✎ᝰ.
+        </div>
+
+        <div>
+
+          <p>
+            RSA merupakan algoritma kriptografi asimetris
+            yang menggunakan dua buah kunci, yaitu
+            <strong>public key</strong> dan
+            <strong>private key</strong>.
+          </p>
+
+          <p>
+            Public key dapat digunakan untuk melakukan
+            enkripsi, sedangkan private key digunakan
+            untuk melakukan dekripsi.
+          </p>
+
+          <p>
+            Keamanan RSA berkaitan dengan sulitnya
+            memfaktorkan bilangan besar hasil perkalian
+            dua bilangan prima.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja RSA</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Pilih Bilangan Prima</h3>
+
+          <p>
+            RSA menggunakan dua bilangan prima,
+            yaitu p dan q.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Buat Modulus</h3>
+
+          <p>
+            Hitung n dengan perkalian
+            p × q.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Buat Kunci</h3>
+
+          <p>
+            Nilai e digunakan sebagai public exponent
+            dan d sebagai private exponent.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Enkripsi & Dekripsi</h3>
+
+          <p>
+            Pesan dienkripsi menggunakan public key
+            dan didekripsi menggunakan private key.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — RUMUS
+        </span>
+
+        <h2>Rumus Dasar RSA</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Modulus:</strong>
+          n = p × q
+        </p>
+
+        <p>
+          <strong>Totient:</strong>
+          φ(n) = (p − 1)(q − 1)
+        </p>
+
+        <p>
+          <strong>Enkripsi:</strong>
+          C = M<sup>e</sup> mod n
+        </p>
+
+        <p>
+          <strong>Dekripsi:</strong>
+          M = C<sup>d</sup> mod n
+        </p>
+
+        <p>
+          Public Key = (e, n)
+        </p>
+
+        <p>
+          Private Key = (d, n)
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba RSA</h2>
+
+        <p>
+          Generate pasangan kunci RSA, lalu gunakan
+          public key untuk enkripsi dan private key
+          untuk dekripsi.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <!-- KEY GENERATION -->
+
+        <div class="input-group">
+
+          <label>
+            Kunci RSA
+          </label>
+
+          <button
+            id="rsa-generate"
+            class="btn btn-primary"
+          >
+            🔑 Generate Kunci
+          </button>
+
+        </div>
+
+
+        <div class="key-grid">
+
+          <div class="input-group">
+
+            <label for="rsa-public">
+              Public Key
+            </label>
+
+            <textarea
+              id="rsa-public"
+              rows="6"
+              readonly
+              placeholder="Public key akan muncul di sini..."
+            ></textarea>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="rsa-private">
+              Private Key
+            </label>
+
+            <textarea
+              id="rsa-private"
+              rows="6"
+              readonly
+              placeholder="Private key akan muncul di sini..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="input-group">
+
+          <label for="rsa-text">
+            Pesan
+          </label>
+
+          <textarea
+            id="rsa-text"
+            rows="5"
+            placeholder="Masukkan pesan..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="rsa-encrypt"
+            class="btn btn-primary"
+          >
+            🔐 Enkripsi
+          </button>
+
+          <button
+            id="rsa-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+          <button
+            id="rsa-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <!-- CIPHERTEXT -->
+
+        <div class="input-group">
+
+          <label for="rsa-cipher">
+            Ciphertext
+          </label>
+
+          <textarea
+            id="rsa-cipher"
+            rows="5"
+            placeholder="Ciphertext hasil enkripsi akan muncul di sini..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="rsa-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Simulasi ini dibuat untuk pembelajaran.
+          RSA pada aplikasi nyata menggunakan ukuran kunci
+          yang jauh lebih besar dan skema padding yang aman.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+        Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>🔐 KRIPTO LAB</strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    let rsaKeys = null;
+
+
+    const publicBox =
+      document.getElementById('rsa-public');
+
+    const privateBox =
+      document.getElementById('rsa-private');
+
+    const textInput =
+      document.getElementById('rsa-text');
+
+    const cipherInput =
+      document.getElementById('rsa-cipher');
+
+    const output =
+      document.getElementById('rsa-output');
+
+
+    // Convert ArrayBuffer → Base64
+    function bufferToBase64(buffer) {
+
+      const bytes =
+        new Uint8Array(buffer);
+
+      let binary = '';
+
+      for (const byte of bytes) {
+        binary += String.fromCharCode(byte);
+      }
+
+      return btoa(binary);
+
+    }
+
+
+    // Base64 → ArrayBuffer
+    function base64ToBuffer(base64) {
+
+      const binary =
+        atob(base64);
+
+      const bytes =
+        new Uint8Array(binary.length);
+
+      for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+      }
+
+      return bytes.buffer;
+
+    }
+
+
+    // GENERATE KEY
+    document
+      .getElementById('rsa-generate')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            output.textContent =
+              'Sedang membuat pasangan kunci...';
+
+
+            rsaKeys =
+              await crypto.subtle.generateKey(
+                {
+                  name: 'RSA-OAEP',
+                  modulusLength: 2048,
+                  publicExponent:
+                    new Uint8Array(
+                      [1, 0, 1]
+                    ),
+                  hash: 'SHA-256'
+                },
+                true,
+                ['encrypt', 'decrypt']
+              );
+
+
+            const publicJwk =
+              await crypto.subtle.exportKey(
+                'jwk',
+                rsaKeys.publicKey
+              );
+
+
+            const privateJwk =
+              await crypto.subtle.exportKey(
+                'jwk',
+                rsaKeys.privateKey
+              );
+
+
+            publicBox.value =
+              JSON.stringify(
+                publicJwk,
+                null,
+                2
+              );
+
+
+            privateBox.value =
+              JSON.stringify(
+                privateJwk,
+                null,
+                2
+              );
+
+
+            output.textContent =
+              'Pasangan kunci RSA berhasil dibuat.';
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // ENCRYPT
+    document
+      .getElementById('rsa-encrypt')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            if (!rsaKeys) {
+
+              output.textContent =
+                'Generate kunci terlebih dahulu.';
+
+              return;
+
+            }
+
+
+            const text =
+              textInput.value;
+
+
+            if (!text) {
+
+              output.textContent =
+                'Pesan harus diisi.';
+
+              return;
+
+            }
+
+
+            const data =
+              new TextEncoder()
+                .encode(text);
+
+
+            const encrypted =
+              await crypto.subtle.encrypt(
+                {
+                  name: 'RSA-OAEP'
+                },
+                rsaKeys.publicKey,
+                data
+              );
+
+
+            cipherInput.value =
+              bufferToBase64(encrypted);
+
+
+            output.textContent =
+              'Pesan berhasil dienkripsi.';
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' + error.message;
+
+          }
+
+        }
+      );
+
+
+    // DECRYPT
+    document
+      .getElementById('rsa-decrypt')
+      .addEventListener(
+        'click',
+        async () => {
+
+          try {
+
+            if (!rsaKeys) {
+
+              output.textContent =
+                'Generate kunci terlebih dahulu.';
+
+              return;
+
+            }
+
+
+            const cipherText =
+              cipherInput.value.trim();
+
+
+            if (!cipherText) {
+
+              output.textContent =
+                'Ciphertext harus diisi.';
+
+              return;
+
+            }
+
+
+            const encrypted =
+              base64ToBuffer(cipherText);
+
+
+            const decrypted =
+              await crypto.subtle.decrypt(
+                {
+                  name: 'RSA-OAEP'
+                },
+                rsaKeys.privateKey,
+                encrypted
+              );
+
+
+            const plaintext =
+              new TextDecoder()
+                .decode(decrypted);
+
+
+            output.textContent =
+              plaintext;
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Dekripsi gagal: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+    document
+      .getElementById('rsa-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          publicBox.value = '';
+          privateBox.value = '';
+          textInput.value = '';
+          cipherInput.value = '';
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+          rsaKeys = null;
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

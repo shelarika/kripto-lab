@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LFSR | Kripto Lab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 Kripto<span>Lab</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html" class="active">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <span class="section-badge">
+        🗲 Stream Cipher
+      </span>
+
+      <h1>
+        LFSR
+      </h1>
+
+      <p>
+        Linear Feedback Shift Register adalah metode pembangkit
+        keystream yang menggunakan operasi pergeseran bit dan
+        feedback untuk menghasilkan rangkaian bit.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PENJELASAN -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div>
+
+          <h2>
+            Apa itu LFSR?
+          </h2>
+
+          <p>
+            Linear Feedback Shift Register (LFSR) merupakan
+            register yang menghasilkan rangkaian bit secara
+            berulang menggunakan operasi shift dan feedback.
+          </p>
+
+          <p>
+            Dalam KriptoLab, LFSR digunakan untuk menghasilkan
+            keystream yang kemudian dikombinasikan dengan data
+            menggunakan operasi XOR.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CARA KERJA -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Cara Kerja
+        </span>
+
+        <h2>
+          Proses LFSR
+        </h2>
+
+        <p>
+          Proses LFSR pada simulasi ini terdiri dari beberapa
+          tahapan utama.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <span class="process-number">
+            01
+          </span>
+
+          <h3>
+            Inisialisasi
+          </h3>
+
+          <p>
+            Nilai awal register dibentuk berdasarkan kunci
+            yang diberikan oleh pengguna.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            02
+          </span>
+
+          <h3>
+            Shift Register
+          </h3>
+
+          <p>
+            Register digeser secara bertahap untuk menghasilkan
+            bit baru.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            03
+          </span>
+
+          <h3>
+            Feedback
+          </h3>
+
+          <p>
+            Bit feedback dihasilkan dari operasi XOR pada
+            posisi bit tertentu dalam register.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <span class="process-number">
+            04
+          </span>
+
+          <h3>
+            XOR Data
+          </h3>
+
+          <p>
+            Keystream yang dihasilkan digunakan bersama
+            operasi XOR untuk mengenkripsi atau mendekripsi data.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRINSIP DASAR -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ∑
+        </div>
+
+        <div>
+
+          <h2>
+            Prinsip Dasar
+          </h2>
+
+          <p>
+            Pada simulasi ini, data dikombinasikan dengan
+            keystream menggunakan operasi XOR.
+          </p>
+
+          <div class="formula-box">
+            Ciphertext = Plaintext XOR Keystream
+          </div>
+
+          <p>
+            Karena XOR dapat dibalik menggunakan nilai
+            keystream yang sama, proses yang sama dapat
+            digunakan untuk melakukan dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULASI -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Simulasi
+        </span>
+
+        <h2>
+          Coba LFSR
+        </h2>
+
+        <p>
+          Masukkan teks dan kunci untuk menjalankan simulasi LFSR.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+        <div class="input-group">
+
+          <label for="lfsr-text">
+            Teks
+          </label>
+
+          <textarea
+            id="lfsr-text"
+            placeholder="Masukkan teks..."
+            rows="5"
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="lfsr-key">
+            Kunci
+          </label>
+
+          <input
+            type="text"
+            id="lfsr-key"
+            placeholder="Masukkan kunci..."
+          >
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            type="button"
+            id="lfsr-encrypt"
+            class="btn btn-primary"
+          >
+            🔒 Enkripsi
+          </button>
+
+          <button
+            type="button"
+            id="lfsr-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="lfsr-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATATAN -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="info-box">
+
+        <div>
+
+          <h2>
+            Catatan
+          </h2>
+
+          <p>
+            Gunakan kunci yang sama saat melakukan enkripsi
+            dan dekripsi. Hasil enkripsi ditampilkan dalam
+            format HEX agar dapat digunakan kembali sebagai
+            input ciphertext saat dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+  <section class="back-home">
+
+    <div class="container">
+
+      <a href="stream.html" class="btn btn-secondary">
+        Kembali ke Stream Cipher
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+
+          <h3>
+            🔐 KriptoLab
+          </h3>
+
+          <p>
+            Media pembelajaran dan simulasi
+            algoritma kriptografi.
+          </p>
+
+        </div>
+
+        <div>
+
+          <p>
+            © 2026 KriptoLab
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/util.js"></script>
+  <script src="js/stream.js"></script>
+
+  <script>
+
+    const lfsrTextInput =
+      document.getElementById('lfsr-text');
+
+    const lfsrKeyInput =
+      document.getElementById('lfsr-key');
+
+    const lfsrOutputBox =
+      document.getElementById('lfsr-output');
+
+
+    // =========================
+    // ENKRIPSI LFSR
+    // =========================
+
+    document
+      .getElementById('lfsr-encrypt')
+      .addEventListener('click', () => {
+
+        try {
+
+          const text =
+            lfsrTextInput.value;
+
+          const key =
+            lfsrKeyInput.value;
+
+
+          if (!text || !key) {
+
+            lfsrOutputBox.textContent =
+              'Teks dan kunci harus diisi.';
+
+            return;
+          }
+
+
+          // Ubah plaintext menjadi byte
+          const data =
+            enc.encode(text);
+
+
+          // Jalankan LFSR
+          const result =
+            lfsr(key, data);
+
+
+          // Tampilkan sebagai HEX
+          lfsrOutputBox.textContent =
+            hex(result);
+
+
+        } catch (error) {
+
+          lfsrOutputBox.textContent =
+            'Error: ' + error.message;
+
+        }
+
+      });
+
+
+    // =========================
+    // DEKRIPSI LFSR
+    // =========================
+
+    document
+      .getElementById('lfsr-decrypt')
+      .addEventListener('click', () => {
+
+        try {
+
+          const text =
+            lfsrTextInput.value;
+
+          const key =
+            lfsrKeyInput.value;
+
+
+          if (!text || !key) {
+
+            lfsrOutputBox.textContent =
+              'Ciphertext dan kunci harus diisi.';
+
+            return;
+          }
+
+
+          // Ciphertext dalam format HEX
+          const data =
+            unhex(text);
+
+
+          // LFSR menggunakan proses yang sama
+          const result =
+            lfsr(key, data);
+
+
+          // Kembalikan menjadi teks
+          lfsrOutputBox.textContent =
+            dec.decode(
+              new Uint8Array(result)
+            );
+
+
+        } catch (error) {
+
+          lfsrOutputBox.textContent =
+            'Error: ' + error.message;
+
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>

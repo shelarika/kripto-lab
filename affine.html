@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affine Cipher - Kripto Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        🔐 KRIPTO LAB
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="block.html">Block Cipher</a>
+        <a href="stream.html">Stream Cipher</a>
+        <a href="fungsi.html">Fungsi Kriptografi</a>
+        <a href="matematika.html" class="active">Matematika</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="algorithm-hero">
+
+    <div class="container">
+
+      <div class="section-badge">
+        SUBSTITUTION CIPHER
+      </div>
+
+      <h1>Affine Cipher</h1>
+
+      <p>
+        Algoritma substitusi klasik yang menggunakan fungsi
+        matematika untuk mengubah setiap karakter plaintext
+        menjadi ciphertext.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-label">01 — PENGENALAN</span>
+        <h2>Apa itu Affine Cipher?</h2>
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          ♻
+        </div>
+
+        <div>
+
+          <p>
+            Affine Cipher merupakan algoritma kriptografi klasik
+            yang melakukan substitusi karakter menggunakan
+            fungsi matematika linear.
+          </p>
+
+          <p>
+            Setiap huruf diubah menjadi nilai angka dari
+            0 sampai 25. Nilai tersebut kemudian diproses
+            menggunakan dua parameter, yaitu
+            <strong>a</strong> dan <strong>b</strong>.
+          </p>
+
+          <p>
+            Nilai <strong>a</strong> harus memiliki invers modulo
+            26 agar proses dekripsi dapat dilakukan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          02 — PROSES
+        </span>
+
+        <h2>Cara Kerja Affine Cipher</h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Konversi Huruf</h3>
+
+          <p>
+            Setiap huruf diubah menjadi angka
+            A = 0 sampai Z = 25.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Enkripsi</h3>
+
+          <p>
+            Nilai huruf dimasukkan ke dalam
+            rumus enkripsi Affine.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Modulo 26</h3>
+
+          <p>
+            Hasil perhitungan diproses menggunakan
+            modulo 26.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Dekripsi</h3>
+
+          <p>
+            Invers modulo dari nilai a digunakan
+            untuk mengembalikan ciphertext menjadi
+            plaintext.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORMULA -->
+  <section class="category-info">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          03 — RUMUS
+        </span>
+
+        <h2>Rumus Affine Cipher</h2>
+
+      </div>
+
+
+      <div class="formula-box">
+
+        <p>
+          <strong>Enkripsi:</strong>
+          C = (aP + b) mod 26
+        </p>
+
+        <p>
+          <strong>Dekripsi:</strong>
+          P = a⁻¹(C - b) mod 26
+        </p>
+
+        <p>
+          <strong>Keterangan:</strong>
+          P = plaintext, C = ciphertext,
+          a dan b = parameter kunci,
+          a⁻¹ = invers modulo dari a.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIMULATION -->
+  <section class="algorithm-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          04 — SIMULASI
+        </span>
+
+        <h2>Coba Affine Cipher</h2>
+
+        <p>
+          Masukkan teks dan nilai a serta b untuk
+          melakukan enkripsi atau dekripsi.
+        </p>
+
+      </div>
+
+
+      <div class="simulation-card">
+
+
+        <div class="input-group">
+
+          <label for="affine-text">
+            Teks
+          </label>
+
+          <textarea
+            id="affine-text"
+            rows="5"
+            placeholder="Masukkan teks..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="affine-a">
+            Nilai a
+          </label>
+
+          <input
+            type="number"
+            id="affine-a"
+            value="5"
+            placeholder="Contoh: 5"
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="affine-b">
+            Nilai b
+          </label>
+
+          <input
+            type="number"
+            id="affine-b"
+            value="8"
+            placeholder="Contoh: 8"
+          >
+
+        </div>
+
+
+        <div class="simulation-buttons">
+
+          <button
+            id="affine-encrypt"
+            class="btn btn-primary"
+          >
+            🔐 Enkripsi
+          </button>
+
+          <button
+            id="affine-decrypt"
+            class="btn btn-secondary"
+          >
+            🔓 Dekripsi
+          </button>
+
+          <button
+            id="affine-clear"
+            class="btn btn-secondary"
+          >
+            Bersihkan
+          </button>
+
+        </div>
+
+
+        <div class="output-group">
+
+          <label>
+            Hasil
+          </label>
+
+          <div
+            id="affine-output"
+            class="output-box"
+          >
+            Hasil akan muncul di sini...
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <p>
+          Contoh nilai <strong>a</strong> yang dapat digunakan
+          adalah 1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23,
+          dan 25 karena memiliki invers modulo 26.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-home">
+
+    <div class="container">
+
+      <a
+        href="matematika.html"
+        class="btn btn-secondary"
+      >
+         Kembali ke Dasar Matematika
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <strong>
+          🔐 KRIPTO LAB
+        </strong>
+
+        <p>
+          Belajar kriptografi secara interaktif.
+        </p>
+
+      </div>
+
+      <div>
+
+        <p>Teknik Informatika</p>
+        <p>Universitas Malikussaleh</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const textInput =
+      document.getElementById('affine-text');
+
+    const aInput =
+      document.getElementById('affine-a');
+
+    const bInput =
+      document.getElementById('affine-b');
+
+    const output =
+      document.getElementById('affine-output');
+
+
+    // Mencari invers modulo
+    function modInverse(a, m) {
+
+      a = ((a % m) + m) % m;
+
+      for (let x = 1; x < m; x++) {
+
+        if ((a * x) % m === 1) {
+          return x;
+        }
+
+      }
+
+      return null;
+
+    }
+
+
+    // ENKRIPSI
+    function affineEncrypt(text, a, b) {
+
+      let result = '';
+
+      for (const char of text) {
+
+        const code =
+          char.charCodeAt(0);
+
+
+        // Huruf besar
+        if (code >= 65 && code <= 90) {
+
+          const p = code - 65;
+
+          const c =
+            ((a * p + b) % 26 + 26) % 26;
+
+          result +=
+            String.fromCharCode(
+              c + 65
+            );
+
+        }
+
+
+        // Huruf kecil
+        else if (
+          code >= 97 &&
+          code <= 122
+        ) {
+
+          const p = code - 97;
+
+          const c =
+            ((a * p + b) % 26 + 26) % 26;
+
+          result +=
+            String.fromCharCode(
+              c + 97
+            );
+
+        }
+
+
+        // Spasi / angka / simbol
+        else {
+
+          result += char;
+
+        }
+
+      }
+
+      return result;
+
+    }
+
+
+    // DEKRIPSI
+    function affineDecrypt(text, a, b) {
+
+      const inverse =
+        modInverse(a, 26);
+
+
+      if (inverse === null) {
+
+        throw new Error(
+          'Nilai a tidak memiliki invers modulo 26.'
+        );
+
+      }
+
+
+      let result = '';
+
+
+      for (const char of text) {
+
+        const code =
+          char.charCodeAt(0);
+
+
+        // Huruf besar
+        if (code >= 65 && code <= 90) {
+
+          const c = code - 65;
+
+          const p =
+            ((inverse * (c - b)) % 26 + 26) % 26;
+
+          result +=
+            String.fromCharCode(
+              p + 65
+            );
+
+        }
+
+
+        // Huruf kecil
+        else if (
+          code >= 97 &&
+          code <= 122
+        ) {
+
+          const c = code - 97;
+
+          const p =
+            ((inverse * (c - b)) % 26 + 26) % 26;
+
+          result +=
+            String.fromCharCode(
+              p + 97
+            );
+
+        }
+
+
+        else {
+
+          result += char;
+
+        }
+
+      }
+
+
+      return result;
+
+    }
+
+
+    // BUTTON ENKRIPSI
+
+    document
+      .getElementById('affine-encrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const text =
+              textInput.value;
+
+            const a =
+              Number(aInput.value);
+
+            const b =
+              Number(bInput.value);
+
+
+            if (!text) {
+
+              output.textContent =
+                'Teks harus diisi.';
+
+              return;
+
+            }
+
+
+            if (!Number.isInteger(a) ||
+                !Number.isInteger(b)) {
+
+              output.textContent =
+                'Nilai a dan b harus berupa angka.';
+
+              return;
+
+            }
+
+
+            if (modInverse(a, 26) === null) {
+
+              output.textContent =
+                'Nilai a tidak valid. Pilih nilai a yang memiliki invers modulo 26.';
+
+              return;
+
+            }
+
+
+            output.textContent =
+              affineEncrypt(
+                text,
+                a,
+                b
+              );
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // BUTTON DEKRIPSI
+
+    document
+      .getElementById('affine-decrypt')
+      .addEventListener(
+        'click',
+        () => {
+
+          try {
+
+            const text =
+              textInput.value;
+
+            const a =
+              Number(aInput.value);
+
+            const b =
+              Number(bInput.value);
+
+
+            if (!text) {
+
+              output.textContent =
+                'Teks harus diisi.';
+
+              return;
+
+            }
+
+
+            if (!Number.isInteger(a) ||
+                !Number.isInteger(b)) {
+
+              output.textContent =
+                'Nilai a dan b harus berupa angka.';
+
+              return;
+
+            }
+
+
+            output.textContent =
+              affineDecrypt(
+                text,
+                a,
+                b
+              );
+
+          }
+
+          catch (error) {
+
+            output.textContent =
+              'Error: ' +
+              error.message;
+
+          }
+
+        }
+      );
+
+
+    // CLEAR
+
+    document
+      .getElementById('affine-clear')
+      .addEventListener(
+        'click',
+        () => {
+
+          textInput.value = '';
+
+          aInput.value = 5;
+
+          bInput.value = 8;
+
+          output.textContent =
+            'Hasil akan muncul di sini...';
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>

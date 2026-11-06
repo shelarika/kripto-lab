@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AES-256-GCM — Kripto Lab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header class="navbar">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🔐</span>
+        <span>Kripto<span class="logo-accent">Lab</span></span>
+      </a>
+
+      <nav class="nav-menu">
+
+        <a href="index.html">Home</a>
+
+        <a href="block.html" class="active">
+          Block Cipher
+        </a>
+
+        <a href="stream.html">
+          Stream Cipher
+        </a>
+
+        <a href="fungsi.html">
+          Fungsi Kriptografi
+        </a>
+
+        <a href="matematika.html">
+          Matematika
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="algorithm-page">
+
+    <!-- ================= HEADER ================= -->
+
+    <section class="algorithm-hero">
+
+      <span class="eyebrow">
+        BLOCK CIPHER · LEARNING
+      </span>
+
+      <h1>
+        AES-256-GCM
+      </h1>
+
+      <p>
+        Algoritma enkripsi modern yang menggunakan AES dengan
+        panjang kunci 256-bit serta mode GCM untuk memberikan
+        kerahasiaan dan autentikasi data.
+      </p>
+
+    </section>
+
+
+    <!-- ================= OVERVIEW ================= -->
+
+    <section class="algorithm-content">
+
+      <div class="content-heading">
+
+        <span class="eyebrow">
+          01 · OVERVIEW
+        </span>
+
+        <h2>
+          Mengenal AES-256-GCM
+        </h2>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <p>
+          AES (Advanced Encryption Standard) merupakan algoritma
+          kriptografi yang digunakan untuk mengenkripsi data.
+          Pada konfigurasi ini, AES menggunakan kunci dengan
+          panjang 256-bit.
+        </p>
+
+        <p>
+          GCM (Galois/Counter Mode) merupakan mode operasi yang
+          memungkinkan proses enkripsi sekaligus memberikan
+          autentikasi terhadap data.
+        </p>
+
+        <p>
+          Dengan demikian, AES-256-GCM tidak hanya membantu menjaga
+          kerahasiaan pesan, tetapi juga dapat mendeteksi apabila
+          ciphertext atau data autentikasinya telah diubah.
+        </p>
+
+      </div>
+
+
+      <!-- ================= COMPONENT ================= -->
+
+      <div class="content-heading process-heading">
+
+        <span class="eyebrow">
+          02 · COMPONENTS
+        </span>
+
+        <h2>
+          Komponen yang Digunakan
+        </h2>
+
+      </div>
+
+
+      <div class="algorithm-grid">
+
+        <div class="content-card">
+
+          <h3>
+            AES-256
+          </h3>
+
+          <p>
+            AES menggunakan kunci sepanjang 256-bit untuk
+            melakukan proses enkripsi dan dekripsi.
+          </p>
+
+        </div>
+
+
+        <div class="content-card">
+
+          <h3>
+            Salt
+          </h3>
+
+          <p>
+            Salt digunakan dalam proses pembentukan kunci dari
+            passphrase sebelum digunakan oleh AES.
+          </p>
+
+        </div>
+
+
+        <div class="content-card">
+
+          <h3>
+            IV
+          </h3>
+
+          <p>
+            Initialization Vector digunakan sebagai nilai awal
+            dalam proses enkripsi GCM.
+          </p>
+
+        </div>
+
+
+        <div class="content-card">
+
+          <h3>
+            Authentication
+          </h3>
+
+          <p>
+            GCM menyediakan autentikasi sehingga perubahan pada
+            ciphertext dapat dideteksi ketika proses dekripsi.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= PROCESS ================= -->
+
+      <div class="content-heading process-heading">
+
+        <span class="eyebrow">
+          03 · HOW IT WORKS
+        </span>
+
+        <h2>
+          Alur Proses
+        </h2>
+
+      </div>
+
+
+      <div class="feistel-flow aes-flow">
+
+        <div class="flow-box">
+
+          <span>INPUT</span>
+
+          <strong>Plaintext</strong>
+
+          <small>
+            Pesan asli
+          </small>
+
+        </div>
+
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+
+        <div class="flow-box">
+
+          <span>KEY</span>
+
+          <strong>PBKDF2</strong>
+
+          <small>
+            Pembentukan kunci
+          </small>
+
+        </div>
+
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+
+        <div class="flow-box">
+
+          <span>ENCRYPT</span>
+
+          <strong>AES-256</strong>
+
+          <small>
+            Enkripsi data
+          </small>
+
+        </div>
+
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+
+        <div class="flow-box">
+
+          <span>AUTH</span>
+
+          <strong>GCM</strong>
+
+          <small>
+            Autentikasi
+          </small>
+
+        </div>
+
+
+        <div class="flow-arrow">
+          →
+        </div>
+
+
+        <div class="flow-box">
+
+          <span>OUTPUT</span>
+
+          <strong>Ciphertext</strong>
+
+          <small>
+            Data terenkripsi
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= SIMULATION ================= -->
+
+      <section class="simulation-section">
+
+        <div class="content-heading">
+
+          <span class="eyebrow">
+            04 · INTERACTIVE SIMULATION
+          </span>
+
+          <h2>
+            Coba AES-256-GCM
+          </h2>
+
+          <p>
+            Masukkan pesan dan kunci, kemudian jalankan proses
+            enkripsi atau dekripsi.
+          </p>
+
+        </div>
+
+
+        <div class="simulation-card">
+
+
+          <!-- INPUT -->
+
+          <div class="input-group">
+
+            <label for="aes-text">
+              Pesan / Ciphertext
+            </label>
+
+            <textarea
+              id="aes-text"
+              rows="5"
+              placeholder="Masukkan pesan..."
+            >Halo UTS Kriptografi 2026</textarea>
+
+            <small>
+              Saat enkripsi, masukkan plaintext.
+              Saat dekripsi, masukkan ciphertext dalam format hex.
+            </small>
+
+          </div>
+
+
+          <!-- KEY -->
+
+          <div class="input-group">
+
+            <label for="aes-key">
+              Kunci / Passphrase
+            </label>
+
+            <input
+              id="aes-key"
+              type="text"
+              value="rahasia123"
+              placeholder="Masukkan kunci..."
+            >
+
+            <small>
+              Passphrase digunakan untuk membentuk kunci AES.
+            </small>
+
+          </div>
+
+
+          <!-- BUTTON -->
+
+          <div class="simulation-actions">
+
+            <button
+              id="aes-encrypt"
+              class="sim-button primary"
+            >
+              🔒 Enkripsi
+            </button>
+
+            <button
+              id="aes-decrypt"
+              class="sim-button secondary"
+            >
+              🔓 Dekripsi
+            </button>
+
+          </div>
+
+
+          <!-- RESULT -->
+
+          <div class="result-box">
+
+            <div class="result-header">
+              <span>HASIL PROSES</span>
+            </div>
+
+            <pre id="aes-output">Hasil akan muncul di sini...</pre>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= NOTES ================= -->
+
+      <div class="formula-card">
+
+        <div>
+
+          <span class="eyebrow">
+            CATATAN
+          </span>
+
+          <h3>
+            Mengapa hasil enkripsi berbeda?
+          </h3>
+
+        </div>
+
+        <p>
+          Setiap proses enkripsi menggunakan nilai salt dan IV
+          yang dibuat secara acak. Oleh karena itu, pesan dan
+          passphrase yang sama dapat menghasilkan ciphertext
+          berbeda pada setiap proses enkripsi.
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ================= BOTTOM ================= -->
+
+    <div class="algorithm-bottom">
+
+      <a href="block.html" class="btn btn-secondary">
+        Kembali ke Block Cipher
+      </a>
+
+    </div>
+
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        🔐 Kripto<span>Lab</span>
+      </div>
+
+      <p>
+        Cryptography Learning Lab — UTS Kriptografi 2026
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="js/util.js"></script>
+  <script src="js/block.js"></script>
+
+  <script>
+const aesText = document.getElementById('aes-text');
+const aesKeyInput = document.getElementById('aes-key');
+const aesOutput = document.getElementById('aes-output');
+
+document.getElementById('aes-encrypt').addEventListener('click', async () => {
+  try {
+    const salt = rnd(16);
+    const iv = rnd(12);
+
+    const key = await aesKey(aesKeyInput.value, salt);
+
+    const ciphertext = new Uint8Array(
+      await crypto.subtle.encrypt(
+        { name: 'AES-GCM', iv },
+        key,
+        enc.encode(aesText.value)
+      )
+    );
+
+    aesOutput.textContent = hex(cat(salt, iv, ciphertext));
+  } catch (error) {
+    aesOutput.textContent = 'Error: ' + error.message;
+  }
+});
+
+document.getElementById('aes-decrypt').addEventListener('click', async () => {
+  try {
+    const data = unhex(aesText.value);
+
+    if (data.length < 45) {
+      throw new Error('Ciphertext terlalu pendek.');
+    }
+
+    const salt = data.slice(0, 16);
+    const iv = data.slice(16, 28);
+    const ciphertext = data.slice(28);
+
+    const key = await aesKey(aesKeyInput.value, salt);
+
+    const plaintext = await crypto.subtle.decrypt(
+      { name: 'AES-GCM', iv },
+      key,
+      ciphertext
+    );
+
+    aesOutput.textContent = dec.decode(plaintext);
+  } catch (error) {
+    aesOutput.textContent = 'Error: Kunci salah atau ciphertext tidak valid.';
+  }
+});
+</script>
+
+</body>
+</html>
